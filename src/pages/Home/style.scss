@@ -1,20 +1,106 @@
-@use '../../assets/styles/vars';
+@use "../../assets/styles/vars";
+@use "../../assets/styles/mixins";
 
 .homePage {
-    background-color: vars.$bgMainColor;
-    min-width: 100vw;
-    min-height: 100vh;
-    display: grid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: vars.$bgMainColor;
+  color: vars.$textColor;
+  min-width: 100vw;
+  min-height: 100vh;
+
+  .container-box {
+    display: flex;
     justify-content: center;
     align-items: center;
-    color: vars.$textColor;
+    flex-direction: column;
+    background-color: #fff;
+    height: auto;
+    width: 32rem;
+    padding: 1rem;
+    border-radius: 15px;
+    box-shadow: 5px 5px 1em rgb(0, 0, 0);
 
     h1 {
-        font-size: 3rem;
+      font-size: 3rem;
+      font-family: vars.$fontTitle;
+      font-weight: 500;
+      color: vars.$bgMainColor;
+      text-align: center;
+      margin: 0.6rem 0;
+
+      span {
+        text-decoration: underline;
+      }
     }
 
-    p {
+    .content-box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem 0;
+      margin: 1rem auto;
+      padding: 0.6rem;
+      width: 100%;
+
+      input {
+        width: 80%;
+        height: 40px;
         text-align: center;
+        background-color: vars.$bgColorDefault;
+        border-color: vars.$borderColor;
+        outline: none;
+        border-radius: 10px;
+        font-size: medium;
+        box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.7);
+      }
+
+      button {
+        background-color: vars.$bgMainColor;
+        border: transparent;
+        color: vars.$textColor;
+        padding: 10px;
+        margin: 1rem auto;
+        text-align: center;
+        text-decoration: none;
         font-size: 1.2rem;
+        border-radius: 30px;
+        width: 60%;
+        box-shadow: 2px 2px 1em rgb(0, 0, 0);
+        cursor: pointer;
+        transition: all 0.6s ease-in-out;
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
     }
+  }
+
+  footer {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    color: #fff;
+
+    p {
+      text-align: center;
+      font-size: 1.2rem;
+      font-family: vars.$fontDefault;
+    }
+  }
 }
+
+// * {
+//   font-family: "Poppins", sans-serif;
+//   margin: 0;
+//   padding: 0;
+//   box-sizing: border-box;
+//   outline: none;
+//   border: none;
+//   text-decoration: none;
+// }
