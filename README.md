@@ -27,6 +27,7 @@ npm run start
 
 * Typescript
 * React
+* Sass
 
 ## ✒️ Autores
 
