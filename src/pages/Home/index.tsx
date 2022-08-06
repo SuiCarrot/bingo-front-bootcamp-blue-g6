@@ -1,13 +1,22 @@
-import './style.scss';
+import "./style.scss";
 
 const Home = () => {
   return (
-    <main className='homePage'>
-        <h1>Capivara Bingo</h1>
+    <main className="homePage">
+      <div className="container-box">
+        <h1>bing<span>o</span></h1>
 
-        <p>Um produto de Capivara Games</p>
+        <div className="content-box">
+          <input type="text" placeholder="digite seu nome" />
+          <button>JOGAR</button>
+        </div>
+      </div>
+
+      <footer>
+        <p>Mais um produto das organizações capivara!</p>
+      </footer>
     </main>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
