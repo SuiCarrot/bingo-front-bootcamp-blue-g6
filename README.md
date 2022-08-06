@@ -36,6 +36,12 @@ npm run start
 * **Karen Lourenço** (https://github.com/KarenMascarenhasLourenco)
 * **Pedro Oliveira** (https://github.com/pedroasdoliveira)
 
+## Links
+
+* **Adobe Xd** (https://xd.adobe.com/view/df4f6575-1e3a-4fe1-8add-cdc766489a0a-8a1c/);
+* **Trello do projeto** (https://trello.com/b/Wl5kU6CZ/bootcamp);
+* **Miro** (https://miro.com/app/board/uXjVOhj41xs=/);
+
 ## 📄 Licença
 
 Este projeto está sob a licença (Mozilla Public License Version 2.0) - veja o arquivo [LICENSE.md](https://github.com/SuiCarrot/bingo-front-bootcamp-blue-g6/blob/main/LICENSE) para detalhes.
