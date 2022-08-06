@@ -1,0 +1,20 @@
+@use './vars';
+
+@mixin defaultButton {
+  background-color: vars.$bgMainColor;
+  border: transparent;
+  color: vars.$textColor;
+  padding: 10px;
+  margin: 1rem auto;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  width: 60%;
+  box-shadow: 2px 2px 1em rgb(0, 0, 0);
+  cursor: pointer;
+  transition: all 0.6s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
+}
