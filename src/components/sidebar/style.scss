@@ -1,3 +1,60 @@
-@use "../../assets/styles/vars";
-@use "../../assets/styles/mixins";
+@use '../../assets/styles/main.scss';
+@use '../../assets/styles/vars';
 
+
+body{
+  background: vars.$bgMainColor;
+}
+
+.sidebar {
+  margin-left: 4rem;
+  margin-top: 2rem;
+  height: 90%;
+  width: 25vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  // padding-top: 40px;
+  background-color: lightblue;
+
+  border-radius: 20px 0 0px 20px; ;
+  }
+  
+  .sidebar div {
+  padding: 8px;
+  font-size: 24px;
+  display: block;
+  }
+  
+  .body-text {
+  margin-left: 150px;
+  font-size: 18px;
+  }
+
+  .capivaraText{
+    background-color: red;
+    border-radius: 20px 0 0px 0px; ;
+
+  }
+
+  .img{
+    height: 25px;
+    width: 25px;
+    margin-right: 20px;
+  }
+
+  .chat-container {
+    background-color: main.$textColor;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 10vh;
+    border: solid rgb(92, 92, 92) ;
+
+    width: 80%;
+
+    margin-left: 20px;
+  }
+
+  .olho-box{
+    border-style: none none solid none ;
+  }
