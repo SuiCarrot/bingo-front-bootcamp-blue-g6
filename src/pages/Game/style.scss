@@ -1,0 +1,13 @@
+@use "../../assets/styles/vars";
+@use "../../assets/styles/mixins";
+
+.gamePage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: vars.$bgMainColor;
+  color: vars.$textColor;
+  min-width: 100vw;
+  min-height: 100vh;
+}
