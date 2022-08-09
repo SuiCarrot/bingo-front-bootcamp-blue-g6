@@ -1,6 +1,9 @@
+import { useNavigate } from "react-router-dom";
 import "./style.scss";
 
 const Home = () => {
+  const navigate = useNavigate()
+
   return (
     <main className="homePage">
       <div className="container-box">
@@ -8,7 +11,7 @@ const Home = () => {
 
         <div className="content-box">
           <input type="text" placeholder="digite seu nome" />
-          <button>JOGAR</button>
+          <button onClick={() => navigate('/capybaraGame')}>JOGAR</button>
         </div>
       </div>
 
