@@ -10,30 +10,38 @@ body{
   margin-left: 4rem;
   margin-top: 2rem;
   height: 90%;
-  width: 25vh;
+  width: 30vh;
   position: absolute;
   left: 0;
   top: 0;
   // padding-top: 40px;
-  background-color: lightblue;
+  background-color: main.$bgColorDefault;
 
   border-radius: 20px 0 0px 20px; ;
   }
   
   .sidebar div {
   padding: 8px;
-  font-size: 24px;
   display: block;
   }
-  
-  .body-text {
-  margin-left: 150px;
-  font-size: 18px;
+
+  .profiles{
+    font-size: 24px;
   }
+  
+
 
   .capivaraText{
-    background-color: red;
+    background-color: main.$borderColor;
     border-radius: 20px 0 0px 0px; ;
+
+    font-size: 40px;
+    font-family: main.$fontDefault;
+    color: main.$textColor;
+
+    text-align: center;
+
+    margin-bottom: 20px;
 
   }
 
@@ -48,13 +56,26 @@ body{
     border-radius: 10px;
     position: absolute;
     bottom: 10vh;
-    border: solid rgb(92, 92, 92) ;
+    border: solid rgb(196 , 196, 196) ;
+    border-width: 2px;
 
     width: 80%;
+    height: 300px;
 
     margin-left: 20px;
+
+    font-family: main.$fontDefault;
+    font-size: 21px;
+    
   }
 
   .olho-box{
     border-style: none none solid none ;
+    font-style: rgb(115, 111,136);
+
+  }
+
+  .text-chat{
+    font-size: 15px;
+    color: #707070;
   }
