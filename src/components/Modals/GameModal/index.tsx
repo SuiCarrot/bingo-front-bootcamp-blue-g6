@@ -4,7 +4,7 @@ import './style.scss'
 const GameModal = () => {
   return (
     <ContainerModal>
-        <h2>Bing<span>o</span></h2>
+        <h2>bing<span>o</span></h2>
 
         <div className='content'>
           <p>Número de cartelas por jogador: <span>5</span></p>
