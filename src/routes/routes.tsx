@@ -7,8 +7,8 @@ const Routers = () => {
   return useRoutes([
     {
       path: RoutesPath.HOME,
-      element: <Home />,
-      // element: <Sidebar />,
+      // element: <Home />,
+      element: <Sidebar />,
 
     },
   ]);

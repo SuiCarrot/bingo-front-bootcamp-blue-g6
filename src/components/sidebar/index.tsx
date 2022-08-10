@@ -22,6 +22,7 @@ const Sidebar = () => {
             <p className='olho-box'>Olho no jogo!</p>
             <div className='text-chat'>
               <p>karen marcou!</p>
+              <input type="text" />
             </div>
           </div>  
 
