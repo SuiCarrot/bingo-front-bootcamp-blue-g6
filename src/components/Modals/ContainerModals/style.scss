@@ -6,11 +6,11 @@
   flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
-  width: 45%;
+  width: 55%;
   height: auto;
-  padding: 1rem;
+  padding: 2rem;
   background-color: vars.$bgColorDefault;
-  border-radius: 15px;
+  border-radius: 25px;
 
   .childrenProp {
     @include bodyStyle;
