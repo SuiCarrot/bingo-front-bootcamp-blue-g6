@@ -1,0 +1,21 @@
+@use "../../../assets/styles/vars";
+@import "../../../assets/styles/mixins";
+
+.containerModal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 45%;
+  height: auto;
+  padding: 1rem;
+  background-color: vars.$bgColorDefault;
+  border-radius: 15px;
+
+  .childrenProp {
+    @include bodyStyle;
+    color: vars.$textColor;
+    margin: 0.5rem auto;
+    cursor: default;
+  }
+}

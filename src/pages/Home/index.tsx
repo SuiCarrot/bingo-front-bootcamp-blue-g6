@@ -1,12 +1,16 @@
+import { useNavigate } from "react-router-dom";
 import "./style.scss";
 
 const Home = () => {
+  const navigate = useNavigate()
+
   return (
     <main className="homePage">
       <div className="container-box">
         <h1>bing<span>o</span></h1>
 
         <div className="content-box">
+
           <input className='nickname' type="text" placeholder="digite seu nome" />
           <input className='nickname-image' type="text" placeholder="insira url da imagem do avatar" />
 
@@ -18,6 +22,7 @@ const Home = () => {
           </div>
           
           <button>JOGAR</button>
+
         </div>
         
       </div>

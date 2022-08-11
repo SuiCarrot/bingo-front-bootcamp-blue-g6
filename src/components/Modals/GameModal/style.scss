@@ -1,0 +1,51 @@
+@use "../../../assets/styles/vars";
+@import "../../../assets/styles/mixins";
+
+h2 {
+  @include titleStyle;
+  font-size: 2.5rem;
+  color: vars.$bgMainColor;
+  text-align: center;
+  margin: 1rem auto;
+
+  span {
+    text-decoration: underline;
+  }
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  p {
+    margin-top: 1rem;
+    text-align: left;
+    font-size: 1.2rem;
+    color: #000;
+
+    span {
+      margin-left: 0.3rem;
+      margin-right: 0.3rem;
+      text-decoration: underline;
+      color: vars.$bgMainColor;
+    }
+  }
+
+  div {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1.2rem;
+    flex-direction: row;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+
+    button {
+        @include defaultButton;
+        padding: 5px;
+        margin: 0;
+        width: 250px;
+    }
+  }
+}
