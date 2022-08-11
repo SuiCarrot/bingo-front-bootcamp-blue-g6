@@ -46,7 +46,7 @@
       padding: 0.6rem;
       width: 100%;
 
-      input {
+      .nickname, .nickname-image {
         width: 80%;
         height: 40px;
         text-align: center;
@@ -56,6 +56,10 @@
         border-radius: 10px;
         font-size: medium;
         box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.7);
+      }
+      .game-mode label{
+        margin:0 8px;
+        color: grey;
       }
 
       button {
@@ -73,7 +77,7 @@
         cursor: pointer;
         transition: all 0.6s ease-in-out;
         &:hover {
-          transform: scale(1.1);
+          transform: scale(1.05);
         }
       }
     }
