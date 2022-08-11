@@ -1,0 +1,96 @@
+@use '../../assets/styles/main.scss';
+@use '../../assets/styles/vars';
+
+
+body{
+  background: vars.$bgMainColor;
+}
+
+.sidebar {
+  margin-left: 4rem;
+  margin-top: 2rem;
+  height: 90%;
+  width: 30vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  // padding-top: 40px;
+  background-color: main.$bgColorDefault;
+
+  border-radius: 20px 0 0px 20px; ;
+  }
+  
+  .sidebar div {
+  padding: 8px;
+  display: block;
+  }
+
+  .profiles{
+    font-size: 24px;
+  }
+  
+
+
+  .capivaraText{
+    background-color: main.$borderColor;
+    border-radius: 20px 0 0px 0px; ;
+
+    font-size: 40px;
+    font-family: main.$fontDefault;
+    color: main.$textColor;
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+  }
+
+  .img{
+    height: 25px;
+    width: 25px;
+    margin-right: 20px;
+  }
+
+  .chat-container {
+    background-color: main.$textColor;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 10vh;
+    border: solid rgb(196 , 196, 196) ;
+    border-width: 2px;
+
+    width: 80%;
+    height: 300px;
+
+    margin-left: 20px;
+
+    font-family: main.$fontDefault;
+    font-size: 21px;
+    
+  }
+
+  .olho-box{
+    border-style: none none solid none ;
+    font-style: rgb(115, 111,136);
+
+  }
+
+  .text-chat{
+    font-size: 15px;
+    color: #707070;
+  }
+
+  input{
+    font-size: 15px;
+    // color: #707070;
+    color: #000000;//color identify -test only
+
+    border: none;
+
+    // background-color: main.$textColor;
+    background-color: red;//color identify -test only
+
+    height: 80px;
+    width: 95%;
+
+  }
