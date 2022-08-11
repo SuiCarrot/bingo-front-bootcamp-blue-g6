@@ -4,7 +4,6 @@ const Sidebar = () => {
 
   return (
     <>
-      <body>
         <div className="sidebar">
           <div className='capivaraText'>capivara</div>
           <div className='profiles'>
@@ -29,7 +28,6 @@ const Sidebar = () => {
 
         </div>
 
-      </body>
     </>
   )
 }
