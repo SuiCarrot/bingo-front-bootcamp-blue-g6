@@ -1,0 +1,13 @@
+@use "../../../assets/styles/vars";
+@import "../../../assets/styles/mixins";
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  color: #000;
+
+  
+}
