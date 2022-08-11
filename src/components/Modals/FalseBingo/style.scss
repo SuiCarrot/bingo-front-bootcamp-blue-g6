@@ -1,0 +1,36 @@
+@use "../../../assets/styles/vars";
+@import "../../../assets/styles/mixins";
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  color: #000;
+
+  span {
+    font-size: 8rem;
+    margin-bottom: 2rem;
+  }
+
+  h2 {
+    @include titleStyle;
+    font-size: 4rem;
+    color: #E41D38;
+    margin-bottom: 2rem;
+  }
+
+  p {
+    @include bodyStyle;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #363637;
+
+    strong {
+        font-weight: bold;
+        color: #000;
+    }
+  }
+}

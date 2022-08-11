@@ -1,0 +1,36 @@
+@use "../../../assets/styles/vars";
+@import "../../../assets/styles/mixins";
+
+.bingo-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  color: #000;
+
+  h2 {
+    @include titleStyle;
+    font-size: 6rem;
+    color: #2ee382;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+
+    span {
+      text-decoration: underline;
+    }
+  }
+
+  h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-weight: 300;
+  }
+
+  p {
+    @include bodyStyle;
+    font-size: 1.8rem;
+    text-align: center;
+    font-weight: bold;
+  }
+}
