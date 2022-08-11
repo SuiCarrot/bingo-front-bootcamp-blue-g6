@@ -21,7 +21,7 @@ const Home = () => {
             <label>multiplayer</label>
           </div>
           
-          <button>JOGAR</button>
+          <button onClick={() => navigate('/capybaraGame')}>JOGAR</button>
 
         </div>
         
