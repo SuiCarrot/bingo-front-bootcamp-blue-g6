@@ -8,11 +8,10 @@ const Home = () => {
   const navigate = useNavigate();
 
   const [valuesLogin, setValuesLogin] = useState<PlayerLogin>({
-    playerName: "",
+    name: "",
     avatar: "",
-    score: 0,
+    score: 2,
     isHost: false,
-    matchId: '',
   });
 
   const handleValues = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -26,6 +25,13 @@ const Home = () => {
     e.preventDefault();
 
     const payload = await Login.Player(valuesLogin);
+    
+    if (payload) {
+      navigate("/capybaraGame");
+    }
+    else {
+      alert('Não foi possivel conectar-se a sala!');
+    }
   }
 
   return (
@@ -40,8 +46,8 @@ const Home = () => {
             className="nickname"
             type="text"
             placeholder="digite seu nome"
-            name="playerName"
-            id="playerName"
+            name="name"
+            id="name"
             onChange={handleValues}
             required
           />
@@ -72,7 +78,7 @@ const Home = () => {
             <label>multiplayer</label>
           </div>
 
-          <button type='submit' onClick={() => navigate("/capybaraGame")}>JOGAR</button>
+          <button type='submit'>JOGAR</button>
         </form>
       </div>
       <footer>
