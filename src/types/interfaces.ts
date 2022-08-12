@@ -1,9 +1,8 @@
 interface PlayerLogin {
-    playerName: string;
+    name: string;
     avatar: string;
-    score?: number;
-    isHost?: boolean;
-    matchId?: string
+    score: number;
+    isHost: boolean;
 }
 
 export type {
