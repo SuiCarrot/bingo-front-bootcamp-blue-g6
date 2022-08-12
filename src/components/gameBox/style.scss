@@ -1,0 +1,33 @@
+@use '../../assets/styles/main.scss';
+@use '../../assets/styles/vars';
+
+.container-box{
+    margin-left: 4rem;
+    margin-top: 2rem;
+    height: 90%;
+    width: 70%;
+    position: absolute;
+    left: 34vh;
+    top: 0;
+    background-color: main.$bgColorDefault;
+  
+    border-radius: 0px 20px 20px 0px;
+
+    // display: flex; 
+    // justify-content: flex-end
+}
+
+.title{
+    border-bottom: 5px solid main.$borderColor;
+    border-radius: 0px 20px 0px 0px;
+
+    margin-top: 5rem;
+
+    // margin-left: 3rem;
+    // margin-right: 3rem;
+
+}
+
+.infos{
+    color: rgb(227, 10, 172);
+}
