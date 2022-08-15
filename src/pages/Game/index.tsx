@@ -1,6 +1,7 @@
 import BingoModal from 'components/Modals/BingoModal'
 import FalseBingoModal from 'components/Modals/FalseBingo'
 import GameModal from 'components/Modals/GameModal'
+import LoserModal from 'components/Modals/LoserModal'
 import Sidebar from 'components/sidebar'
 import './style.scss'
 
@@ -10,7 +11,8 @@ const GamePage = () => {
         {/* <Sidebar /> */}
         {/* <GameModal /> */}
         {/* <BingoModal /> */}
-        <FalseBingoModal />
+        <LoserModal />
+        {/* <FalseBingoModal /> */}
     </main>
   )
 }
