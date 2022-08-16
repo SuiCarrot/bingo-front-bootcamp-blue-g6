@@ -10,9 +10,7 @@
     left: 34vh;
     top: 0;
     background-color: main.$bgColorDefault;
-  
     border-radius: 0px 20px 20px 0px;
-
     // display: flex; 
     // justify-content: flex-end
 }
@@ -107,4 +105,12 @@ button {
 .tempo-nmr{
     font-weight: 600;
     font-size: 80px;
+}
+
+.tables {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    gap: .5rem;
+    padding: .5rem;
 }
