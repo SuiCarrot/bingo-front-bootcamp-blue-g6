@@ -10,7 +10,7 @@ const Home = () => {
   const [valuesLogin, setValuesLogin] = useState<PlayerLogin>({
     name: "",
     avatar: "",
-    score: 2,
+    score: 0,
     isHost: false,
   });
 
