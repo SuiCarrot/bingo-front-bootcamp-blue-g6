@@ -17,7 +17,7 @@ const GamePage = () => {
         <GameBox/>
         {/* <GameModal /> */}
         {/* <BingoModal /> */}
-        <LoserModal />
+        {/* <LoserModal /> */}
         {/* <FalseBingoModal /> */}
     </main>
   )
