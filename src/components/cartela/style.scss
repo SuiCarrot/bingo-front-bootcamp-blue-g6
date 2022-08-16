@@ -1,48 +1,37 @@
-@use '../../assets/styles/main.scss';
-@use '../../assets/styles/vars';
+@use "../../assets/styles/main.scss";
+@use "../../assets/styles/vars";
 
 table {
-    border: 2px solid #707070;
-    box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.7);
-    border-radius: 10px;
+  border-spacing: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: vars.$bgColorDefault;
+  border: 2px solid #000;
+  border-radius: 10px;
+  width: 285px;
+  height: 345px;
 
-    width: 350px;
-    height: 430px;
-
-    margin: 20px;
-
-  }
-
-
-  td{
-    border: 2px solid rgb(112,112,112);
-    border-radius: 10px;
-
-
-    background: rgb(239,239,239);
-
-    width: 70px;
-    height: 70px;
-
+  .card-title {
+    font-family: vars.$fontTitle;
+    font-weight: 500;
+    font-size: 2rem;
+    color: rgb(115, 115, 140);
     text-align: center;
-
   }
 
-  .free{
+  td {
+    border: 1px solid rgb(112, 112, 112);
+    border-radius: 10px;
+    background: rgb(239, 239, 239);
+    width: 40px;
+    height: 40px;
+    color: #000;
+    text-align: center;
+  }
+
+  .free {
     background: main.$borderColor;
   }
-
-  .card-title{
-  font-family: vars.$fontTitle;
-  font-weight: 500;
-  font-size: 30px;
-
-  color: rgb(115, 115, 140);
-
-  align-items: center;
-
-  position: absolute;
-  width: 350px;
-  text-align: center;
-
-  }
+}
