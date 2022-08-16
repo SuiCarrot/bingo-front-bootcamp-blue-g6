@@ -8,11 +8,11 @@ import './style.scss'
 const GamePage = () => {
   return (
     <main className='gamePage'>
-        {/* <Sidebar /> */}
+        <Sidebar />
         {/* <GameModal /> */}
         {/* <BingoModal /> */}
         {/* <FalseBingoModal /> */}
-        <Cartela/>
+        {/* <Cartela/> */}
     </main>
   )
 }
