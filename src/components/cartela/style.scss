@@ -1,0 +1,48 @@
+@use '../../assets/styles/main.scss';
+@use '../../assets/styles/vars';
+
+table {
+    border: 2px solid #707070;
+    box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+
+    width: 350px;
+    height: 430px;
+
+    margin: 20px;
+
+  }
+
+
+  td{
+    border: 2px solid rgb(112,112,112);
+    border-radius: 10px;
+
+
+    background: rgb(239,239,239);
+
+    width: 70px;
+    height: 70px;
+
+    text-align: center;
+
+  }
+
+  .free{
+    background: main.$borderColor;
+  }
+
+  .card-title{
+  font-family: vars.$fontTitle;
+  font-weight: 500;
+  font-size: 30px;
+
+  color: rgb(115, 115, 140);
+
+  align-items: center;
+
+  position: absolute;
+  width: 350px;
+  text-align: center;
+
+  }
