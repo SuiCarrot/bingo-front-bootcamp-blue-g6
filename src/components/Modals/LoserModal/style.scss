@@ -1,0 +1,27 @@
+@use "../../../assets/styles/vars";
+@import "../../../assets/styles/mixins";
+
+.loser-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  color: #000;
+
+  h2 {
+    @include titleStyle;
+    font-size: 6rem;
+    color: #E41D38;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
+  }
+
+  p {
+    @include bodyStyle;
+    font-size: 1.8rem;
+    text-align: center;
+    color: #363637;
+    font-weight: 300;
+  }
+}
