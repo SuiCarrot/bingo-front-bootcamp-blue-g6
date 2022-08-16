@@ -12,6 +12,7 @@ const Home = () => {
     avatar: "",
     score: 0,
     isHost: false,
+    matchId: "",
   });
 
   const handleValues = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -25,14 +26,13 @@ const Home = () => {
     e.preventDefault();
 
     const payload = await Login.Player(valuesLogin);
-    
+
     if (payload) {
       navigate("/capybaraGame");
+    } else {
+      alert("Não foi possivel conectar-se a sala!");
     }
-    else {
-      alert('Não foi possivel conectar-se a sala!');
-    }
-  }
+  };
 
   return (
     <main className="homePage">
@@ -78,7 +78,7 @@ const Home = () => {
             <label>multiplayer</label>
           </div>
 
-          <button type='submit'>JOGAR</button>
+          <button type="submit">JOGAR</button>
         </form>
       </div>
       <footer>
