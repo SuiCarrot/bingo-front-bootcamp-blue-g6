@@ -3,12 +3,14 @@ import FalseBingoModal from 'components/Modals/FalseBingo'
 import GameModal from 'components/Modals/GameModal'
 import LoserModal from 'components/Modals/LoserModal'
 import Sidebar from 'components/sidebar'
+import GameBox from 'components/gameBox'
 import './style.scss'
 
 const GamePage = () => {
   return (
     <main className='gamePage'>
-        {/* <Sidebar /> */}
+        <Sidebar />
+        <GameBox/>
         {/* <GameModal /> */}
         {/* <BingoModal /> */}
         <LoserModal />
