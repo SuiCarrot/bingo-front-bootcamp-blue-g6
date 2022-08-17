@@ -46,7 +46,7 @@
       padding: 0.6rem;
       width: 100%;
       
-      .nickname, .nickname-image {
+      .nickname, .nickname-image, .nome-sala, .quantidade-cartelas, .quantidade-partidas {
         width: 80%;
         height: 40px;
         text-align: center;
@@ -60,6 +60,10 @@
       .game-mode label{
         margin:0 8px;
         color: grey;
+      }
+      .selector-game-mode{
+        height: auto;
+        width: auto;
       }
 
       button {
@@ -82,23 +86,19 @@
       }
     }
   }
+}
+footer {
+  height:40px;
+  align-items: center;
+  color: #fff;
 
-  footer {
-    position: absolute;
-    bottom: 30px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    align-items: center;
-    color: #fff;
-
-    p {
-      text-align: center;
-      font-size: 1.2rem;
-      font-family: vars.$fontDefault;
-    }
+  p {
+    padding: 15px, 0;
+    text-align: center;
+    font-size: 1.2rem;
+    font-family: vars.$fontDefault;
   }
 }
-
 // * {
 //   font-family: "Poppins", sans-serif;
 //   margin: 0;
