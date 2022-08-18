@@ -11,6 +11,15 @@ export const CardService = {
     }
   },
 
+  GetAllCards: async () => {
+    try {
+      const res = await api.get("/cards");
+      return res;
+    } catch (error: any) {
+      console.log({ message: `Error` + error });
+    }
+  },
+
   GetCardById: async (id: string) => {
     try {
       const res = await api.get(`/cards/${id}`);
