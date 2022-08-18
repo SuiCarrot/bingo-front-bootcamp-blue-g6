@@ -11,6 +11,15 @@ export const PlayerService = {
     }
   },
 
+  GetAllPlayers: async () => {
+    try {
+      const res = await api.get("/player");
+      return res;
+    } catch (error: any) {
+      console.log({ message: `Error` + error });
+    }
+  },
+
   UpdatedPlayer: async (id: string, values: PlayerLogin) => {
     try {
       const res = await api.patch(`/player/${id}`, values);
