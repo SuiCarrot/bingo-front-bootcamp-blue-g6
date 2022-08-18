@@ -4,7 +4,7 @@ interface PlayerLogin {
     avatar: string;
     score?: number;
     isHost?: boolean;
-    matchId: string;
+    matchId: string | undefined;
 }
 
 interface Cards {
