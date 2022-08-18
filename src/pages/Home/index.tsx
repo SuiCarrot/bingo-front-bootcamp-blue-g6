@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Login } from "service/LoginPlayer";
-import { PlayerLogin } from "types/interfaces";
+import { MatchService } from "service/MatchService";
+import { MatchGame, PlayerLogin } from "types/interfaces";
 import "./style.scss";
 
 const Home = () => {
@@ -15,22 +16,68 @@ const Home = () => {
     matchId: "",
   });
 
-  const handleValues = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const [valuesMatch, setValuesMatch] = useState<MatchGame>({
+    name: "",
+    numberOfCards: 0,
+    numberOfRounds: 0,
+    drawTime: 0,
+    link: "",
+    winner: "",
+  });
+
+  const handleValuesPlayer = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValuesLogin((values: PlayerLogin) => ({
       ...values,
       [e.target.name]: e.target.value,
     }));
   };
 
+  const handleValuesMatch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (
+      e.target.name === "drawTime" ||
+      e.target.name === "numberOfRounds" ||
+      e.target.name === "numberOfCards"
+    ) {
+      setValuesMatch((values: MatchGame) => ({
+        ...values,
+        [e.target.name]: parseInt(e.target.value),
+      }));
+    } else {
+      setValuesMatch((values: MatchGame) => ({
+        ...values,
+        [e.target.name]: e.target.value,
+      }));
+    }
+  };
+
   const handleLogin = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const payload = await Login.Player(valuesLogin);
+    const payloadMatch = await MatchService.CreateMatch(valuesMatch);
 
-    if (payload) {
-      navigate("/capybaraGame");
+    console.log(payloadMatch?.data);
+
+    if (payloadMatch) {
+      setValuesLogin({
+        name: valuesLogin.name,
+        avatar: valuesLogin.avatar,
+        matchId: payloadMatch.data.id,
+      });
+
+      if (valuesLogin.matchId !== '') {
+        const payloadPlayer = await Login.Player(valuesLogin);
+
+        if (payloadPlayer) {
+          navigate("/capybaraGame");
+        } else {
+          alert("Informações do jogador incompativeis!");
+        }
+      }
+      else {
+        alert('Id não correspondido!');
+      }
     } else {
-      alert("Não foi possivel conectar-se a sala!");
+      alert("Informações da partida incorretas!");
     }
   };
 
@@ -49,7 +96,7 @@ const Home = () => {
               placeholder="digite seu nome"
               name="name"
               id="name"
-              onChange={handleValues}
+              onChange={handleValuesPlayer}
               required
             />
             <input
@@ -58,34 +105,44 @@ const Home = () => {
               placeholder="insira url da imagem do avatar"
               name="avatar"
               id="avatar"
-              onChange={handleValues}
+              onChange={handleValuesPlayer}
               required
             />
             <input
               className="nome-sala"
               type="text"
               placeholder="insira o nome da sala"
-              name="salaName"
-              id="salaName"
-              onChange={handleValues}
+              name="name"
+              id="name"
+              onChange={handleValuesMatch}
               required
             />
             <input
               className="quantidade-cartelas"
               type="text"
               placeholder="quantidade de cartelas por jogador"
-              name="quantidadeCartelas"
-              id="quantidadeCartelas"
-              onChange={handleValues}
+              name="numberOfCards"
+              id="numberOfCards"
+              onChange={handleValuesMatch}
               required
             />
             <input
               className="quantidade-partidas"
               type="text"
               placeholder="quantas partidas deseja jogar?"
-              name="quantidadePartidas"
-              id="quantidadePartidas"
-              onChange={handleValues}
+              name="numberOfRounds"
+              id="numberOfRounds"
+              onChange={handleValuesMatch}
+              required
+            />
+
+            <input
+              className="quantidade-partidas"
+              type="text"
+              placeholder="Tempo de sorteio?"
+              name="drawTime"
+              id="drawTime"
+              onChange={handleValuesMatch}
               required
             />
 
@@ -113,9 +170,9 @@ const Home = () => {
         </div>
       </main>
       <footer>
-      <p>Mais um produto das organizações capivara!</p>
-    </footer>
-  </>
+        <p>Mais um produto das organizações capivara!</p>
+      </footer>
+    </>
   );
 };
 
