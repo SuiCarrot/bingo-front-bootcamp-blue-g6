@@ -55,8 +55,6 @@ const Home = () => {
 
     const payloadMatch = await MatchService.CreateMatch(valuesMatch);
 
-    console.log(payloadMatch?.data);
-
     if (payloadMatch) {
       setValuesLogin({
         name: valuesLogin.name,
@@ -65,6 +63,8 @@ const Home = () => {
         isHost: false,
         score: 0,
       });
+
+      console.log(valuesLogin);
 
       if (valuesLogin.matchId !== '') {
         const payloadPlayer = await Login.Player(valuesLogin);
