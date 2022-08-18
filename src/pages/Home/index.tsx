@@ -62,6 +62,8 @@ const Home = () => {
         name: valuesLogin.name,
         avatar: valuesLogin.avatar,
         matchId: payloadMatch.data.id,
+        isHost: false,
+        score: 0,
       });
 
       if (valuesLogin.matchId !== '') {
