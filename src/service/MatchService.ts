@@ -11,6 +11,15 @@ export const MatchService = {
     }
   },
 
+  GetAllMatchs: async () => {
+    try {
+      const res = await api.get("/match");
+      return res;
+    } catch (error: any) {
+      console.log({ message: `Error` + error });
+    }
+  },
+
   GetMatchId: async (id: string) => {
     try {
       const res = await api.get(`/match/${id}`);
@@ -19,4 +28,13 @@ export const MatchService = {
       console.log({ message: `Error` + error });
     }
   },
+
+  UpdatedMatch: async (id: string, values: MatchGame) => {
+    try {
+
+    }
+    catch (error: any) {
+      
+    }
+  }
 };
