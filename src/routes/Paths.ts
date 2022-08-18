@@ -1,5 +1,5 @@
 export enum RoutesPath {
     HOME = '/',
     CAPYBARA_ENTERING = '/capybaraEntering',
-    CAPYBARA_GAME = '/capybaraGame'
+    CAPYBARA_GAME = '/capybaraGame/:id'
 }
