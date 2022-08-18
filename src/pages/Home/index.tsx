@@ -8,14 +8,6 @@ import "./style.scss";
 const Home = () => {
   const navigate = useNavigate();
 
-  const [valuesLogin, setValuesLogin] = useState<PlayerLogin>({
-    name: "",
-    avatar: "",
-    score: 0,
-    isHost: false,
-    matchId: "",
-  });
-
   const [valuesMatch, setValuesMatch] = useState<MatchGame>({
     name: "",
     numberOfCards: 0,
@@ -24,13 +16,6 @@ const Home = () => {
     link: "",
     winner: "",
   });
-
-  const handleValuesPlayer = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setValuesLogin((values: PlayerLogin) => ({
-      ...values,
-      [e.target.name]: e.target.value,
-    }));
-  };
 
   const handleValuesMatch = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (
@@ -56,28 +41,7 @@ const Home = () => {
     const payloadMatch = await MatchService.CreateMatch(valuesMatch);
 
     if (payloadMatch) {
-      setValuesLogin({
-        name: valuesLogin.name,
-        avatar: valuesLogin.avatar,
-        matchId: payloadMatch.data.id,
-        isHost: false,
-        score: 0,
-      });
-
-      console.log(valuesLogin);
-
-      if (valuesLogin.matchId !== '') {
-        const payloadPlayer = await Login.Player(valuesLogin);
-
-        if (payloadPlayer) {
-          navigate("/capybaraGame");
-        } else {
-          alert("Informações do jogador incompativeis!");
-        }
-      }
-      else {
-        alert('Id não correspondido!');
-      }
+      navigate(`/capybaraGame/${payloadMatch.data.id}`);
     } else {
       alert("Informações da partida incorretas!");
     }
@@ -92,24 +56,6 @@ const Home = () => {
           </h1>
 
           <form onSubmit={handleLogin} className="content-box">
-            <input
-              className="nickname"
-              type="text"
-              placeholder="digite seu nome"
-              name="name"
-              id="name"
-              onChange={handleValuesPlayer}
-              required
-            />
-            <input
-              className="nickname-image"
-              type="text"
-              placeholder="insira url da imagem do avatar"
-              name="avatar"
-              id="avatar"
-              onChange={handleValuesPlayer}
-              required
-            />
             <input
               className="nome-sala"
               type="text"
