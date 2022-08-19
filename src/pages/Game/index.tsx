@@ -8,6 +8,7 @@ import GameBox from 'components/gameBox'
 
 import './style.scss'
 import PlayerModal from 'components/Modals/PlayerModal'
+import { useState } from 'react'
 
 const GamePage = () => {
   return (
@@ -15,12 +16,11 @@ const GamePage = () => {
         {/* <Sidebar /> */}
         {/* <FalseBingoModal /> */}
         {/* <Cartela/> */}
-        {/* <GameBox/> */}
+        <GameBox/>
         {/* <GameModal /> */}
         {/* <BingoModal /> */}
         {/* <LoserModal /> */}
         {/* <FalseBingoModal /> */}
-        <PlayerModal />
     </main>
   )
 }

@@ -41,7 +41,7 @@ const Home = () => {
     const payloadMatch = await MatchService.CreateMatch(valuesMatch);
 
     if (payloadMatch) {
-      navigate(`/capybaraGame/${payloadMatch.data.id}`);
+      navigate(`/player/${payloadMatch.data.id}`);
     } else {
       alert("Informações da partida incorretas!");
     }

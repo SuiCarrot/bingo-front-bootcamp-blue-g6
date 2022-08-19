@@ -2,7 +2,6 @@ import "./style.scss";
 
 const Cartela = () => {
   return (
-  
       <table>
         <tr>
             <th className="card-title">Cartela 01</th>

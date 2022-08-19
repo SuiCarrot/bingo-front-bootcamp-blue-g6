@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Login } from "service/LoginPlayer";
 import { PlayerLogin } from "types/interfaces";
 import ContainerModal from "../ContainerModals";
 import "./style.scss";
 
 const PlayerModal = () => {
-    const {id} = useParams();
+  const { id } = useParams();
+  const navigate = useNavigate();
 
   const [valuesLogin, setValuesLogin] = useState<PlayerLogin>({
     name: "",
@@ -31,12 +32,12 @@ const PlayerModal = () => {
     const payloadPlayer = await Login.Player(valuesLogin);
 
     if (payloadPlayer) {
-        alert('Sucesso')
+      localStorage.setItem("playerId", payloadPlayer.data.id);
+      navigate("/capybaraGame");
+    } else {
+      alert("Error");
     }
-    else {
-        alert('Error')
-    }
-  }
+  };
 
   return (
     <section className="container-playerModal">
