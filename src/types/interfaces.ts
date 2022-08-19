@@ -4,13 +4,13 @@ interface PlayerLogin {
     avatar: string;
     score?: number;
     isHost?: boolean;
-    matchId: string;
+    matchId: string | undefined;
 }
 
 interface Cards {
     id?: string;
     numbers: number[];
-    playerId: string;
+    playerId: string | null;
 }
 
 interface MatchGame {
@@ -25,7 +25,7 @@ interface MatchGame {
 
 interface DrawNumbers {
     id?: string;
-    actualNumber: number;
+    actualNumber: number[];
     lastNumbers: number[];
     drawNumbers: number[];
     baseNumbers: number[];

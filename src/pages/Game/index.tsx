@@ -7,11 +7,13 @@ import Cartela from 'components/cartela'
 import GameBox from 'components/gameBox'
 
 import './style.scss'
+import PlayerModal from 'components/Modals/PlayerModal'
+import { useState } from 'react'
 
 const GamePage = () => {
   return (
     <main className='gamePage'>
-        <Sidebar />
+        {/* <Sidebar /> */}
         {/* <FalseBingoModal /> */}
         {/* <Cartela/> */}
         <GameBox/>
