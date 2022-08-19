@@ -20,7 +20,7 @@ export const CardService = {
     }
   },
 
-  GetCardById: async (id: string) => {
+  GetCardById: async (id: string | null) => {
     try {
       const res = await api.get(`/cards/${id}`);
       return res;
