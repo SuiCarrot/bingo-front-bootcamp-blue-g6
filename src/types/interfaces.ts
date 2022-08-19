@@ -25,7 +25,7 @@ interface MatchGame {
 
 interface DrawNumbers {
     id?: string;
-    actualNumber: number;
+    actualNumber: number[];
     lastNumbers: number[];
     drawNumbers: number[];
     baseNumbers: number[];
