@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { CardService } from "service/CardService";
 import { Login } from "service/LoginPlayer";
 import { PlayerLogin } from "types/interfaces";
-import ContainerModal from "../ContainerModals";
 import "./style.scss";
 
 const PlayerModal = () => {
@@ -16,8 +16,6 @@ const PlayerModal = () => {
     isHost: false,
     matchId: id,
   });
-
-  console.log(valuesLogin.matchId);
 
   const handleValuesPlayer = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValuesLogin((values: PlayerLogin) => ({
@@ -33,9 +31,24 @@ const PlayerModal = () => {
 
     if (payloadPlayer) {
       localStorage.setItem("playerId", payloadPlayer.data.id);
-      navigate("/capybaraGame");
+      createCard();
     } else {
       alert("Error");
+    }
+  };
+
+  const createCard = async () => {
+    const payloadCard = await CardService.CreateCardGame({
+      id: "",
+      numbers: [],
+      playerId: localStorage.getItem(`playerId`),
+    });
+
+    if (payloadCard) {
+      localStorage.setItem('cardId', payloadCard.data.id);
+      navigate('/capybaraGame');
+    } else {
+      alert("Erro");
     }
   };
 
