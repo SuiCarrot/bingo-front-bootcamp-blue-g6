@@ -8,20 +8,20 @@ const GameBox = () => {
     <div className="container-box">
       <div className="title">bola atual</div>
       <div className="infos">
-        <p className="anteriores-box">anteriores</p>
-        <p>
+        <div className="anteriores-box">anteriores</div>
+        <div>
           <div className="bola" />
-          <p>
+          <div>
             <button>
               {" "}
               bing<span>o</span>!
             </button>
-          </p>
-        </p>
-        <p className="tempo-box">
+          </div>
+        </div>
+        <div className="tempo-box">
           tempo
           <div className="tempo-nmr">8</div>
-        </p>
+        </div>
       </div>
 
       <div className="tables">
