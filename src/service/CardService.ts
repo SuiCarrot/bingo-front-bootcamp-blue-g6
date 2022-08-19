@@ -5,6 +5,7 @@ export const CardService = {
   CreateCardGame: async (values: Cards) => {
     try {
       const res = await api.post("/cards", values);
+      console.log('Rodou a requisição')
       return res;
     } catch (error: any) {
       console.log({ message: `Error` + error });

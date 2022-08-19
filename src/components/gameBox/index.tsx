@@ -2,6 +2,8 @@ import Cartela from "components/cartela";
 import "./style.scss";
 
 const GameBox = () => {
+  console.log('Renderizou o gameBox');
+
   return (
     <div className="container-box">
       <div className="title">bola atual</div>

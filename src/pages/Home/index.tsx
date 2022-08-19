@@ -66,17 +66,23 @@ const Home = () => {
 
       console.log(valuesLogin);
 
-      if (valuesLogin.matchId !== '') {
-        const payloadPlayer = await Login.Player(valuesLogin);
+      if (valuesLogin.matchId !== "") {
+        const payloadPlayer = await Login.Player({
+          name: valuesLogin.name,
+          avatar: valuesLogin.avatar,
+          matchId: payloadMatch.data.id,
+          isHost: false,
+          score: 0,
+        });
 
         if (payloadPlayer) {
+          localStorage.setItem('playerId', payloadPlayer.data.id);
           navigate("/capybaraGame");
         } else {
           alert("Informações do jogador incompativeis!");
         }
-      }
-      else {
-        alert('Id não correspondido!');
+      } else {
+        alert("Id não correspondido!");
       }
     } else {
       alert("Informações da partida incorretas!");
