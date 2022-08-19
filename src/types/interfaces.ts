@@ -10,7 +10,7 @@ interface PlayerLogin {
 interface Cards {
     id?: string;
     numbers: number[];
-    playerId: string;
+    playerId: string | null;
 }
 
 interface MatchGame {
