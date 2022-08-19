@@ -1,7 +1,7 @@
 import api from "./api";
 import { DrawNumbers } from "../types/interfaces";
 
-const route = "/draw-numbers";
+const route = "/drawn-numbers";
 
 export const DrawNumbersService = {
   Post: async (values: DrawNumbers) => {
@@ -31,7 +31,7 @@ export const DrawNumbersService = {
     }
   },
 
-  Patch: async (id: string, values: DrawNumbers) => {
+  Patch: async (id: string | undefined, values: DrawNumbers) => {
     try {
       const res = await api.patch(route + `/${id}`, values);
       return res;
