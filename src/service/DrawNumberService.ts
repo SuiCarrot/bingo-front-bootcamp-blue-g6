@@ -48,4 +48,16 @@ export const DrawNumbersService = {
       console.log({ message: `Error` + error });
     }
   },
+
+  CheckBingo: async (cardId: string, drawnNumbersId: string | undefined) => {
+    try {
+      const res = await api.get(
+        route +
+          `/checkVictory/check?cardId=${cardId}&drawnNumbersId=${drawnNumbersId}`
+      );
+      return res;
+    } catch (error: any) {
+      console.log({ message: `Error` + error });
+    }
+  },
 };
