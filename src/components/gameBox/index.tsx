@@ -7,52 +7,82 @@ import "./style.scss";
 
 const GameBox = () => {
   const [drawnNumber, setDrawnNumber] = useState<DrawNumbers>({
-    id: '',
+    id: "",
     actualNumber: [],
     baseNumbers: [],
     drawNumbers: [],
     lastNumbers: [],
   });
-
-  useEffect(() => {
-    
-  }, []);
+  const [bingoBtn, setBingoBtn] = useState(false);
+  const [timer, setTimer] = useState(false);
 
   const handleStart = async () => {
     const payloadCreate = await DrawNumbersService.Post(drawnNumber);
-    console.log(payloadCreate?.data);
 
     if (payloadCreate) {
-      console.log('Sucesso');
+      console.log(payloadCreate.data);
+      console.log("Numeros sorteados criados");
       setDrawnNumber(payloadCreate.data);
+      setBingoBtn(true);
+      setTimer(true);
+    } else {
+      alert("Algo de errado não está certo!");
     }
-    else {
-      alert('Algo de errado não está certo!')
+  };
+
+  const handleBingo = async () => {
+    const cardId = localStorage.getItem("cardId");
+
+    if (cardId) {
+      const payloadBingo = await DrawNumbersService.CheckBingo(
+        cardId,
+        drawnNumber.id
+      );
+
+      if (payloadBingo) {
+        console.log("Rota configurada");
+        console.log(payloadBingo.data);
+      } else {
+        console.log("Erro ao configurar a rota");
+      }
     }
-  }
+  };
 
   return (
     <div className="container-box">
       <div className="title">bola atual</div>
       <div className="infos">
-        <div className="anteriores-box">anteriores</div>
+        <div className="anteriores-box">
+          <p>anteriores</p>
+
+          <p>{drawnNumber.lastNumbers}</p>
+        </div>
         <div>
           <div className="bola" />
+          <p>{drawnNumber.actualNumber}</p>
           <div>
-            <button>
-              {" "}
-              bing<span>o</span>!
-            </button>
-            <button onClick={handleStart}>
-              {" "}
-              Começar!
-            </button>
+            {bingoBtn === true ? (
+              <button onClick={handleBingo}>
+                {" "}
+                bing<span>o</span>!
+              </button>
+            ) : (
+              <button onClick={handleStart}>Começar!</button>
+            )}
           </div>
         </div>
         <div className="tempo-box">
           tempo
           <div className="tempo-nmr">
-            <Timer seconds={10} />
+            {timer === true ? (
+              <Timer
+                seconds={10}
+                drawnNumber={drawnNumber}
+                setDrawnNumber={setDrawnNumber}
+              />
+            ) : (
+              0
+            )}
           </div>
         </div>
       </div>
