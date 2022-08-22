@@ -1,113 +1,104 @@
-@use '../../assets/styles/main.scss';
-@use '../../assets/styles/vars';
+@use "../../assets/styles/main.scss";
+@use "../../assets/styles/vars";
 
-.container-box{
-    height: 90%;
-    width: 70%;
-    left: 34vh;
-    top: 0;
-    background-color: main.$bgColorDefault;
-    border-radius: 0px 20px 20px 0px;
-    // display: flex; 
-    // justify-content: flex-end
+.container-box {
+  height: 90%;
+  width: 70%;
+  left: 34vh;
+  top: 0;
+  background-color: main.$bgColorDefault;
+  border-radius: 0px 20px 20px 0px;
+  // display: flex;
+  // justify-content: flex-end
 }
 
-.title{
-    border-bottom: 5px solid rgb(148,57,254);
-    border-radius: 0px 20px 0px 0px;
+.title {
+  border-bottom: 5px solid rgb(148, 57, 254);
+  border-radius: 0px 20px 0px 0px;
 
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 
-    color: #707070;
+  color: #707070;
 
-    font-family: main.$fontTitle;
-    font-weight: 600;
-    font-size: 7vh;
-
+  font-family: main.$fontTitle;
+  font-weight: 600;
+  font-size: 7vh;
 }
 
-.infos{
-    color: #707070;
+.infos {
+  color: #707070;
 
-    width: 100%;
-    padding-left: 30px;
-    padding-right: 30px;
+  width: 100%;
+  padding-left: 30px;
+  padding-right: 30px;
 
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-content: space-between;
 
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-content:space-between;
+  font-size: 3rem;
+  font-family: vars.$fontTitle;
+  font-weight: 500;
+  text-align: center;
+  margin: 0.6rem 0;
 
-
-    font-size: 3rem;
-    font-family: vars.$fontTitle;
-    font-weight: 500;
-    text-align: center;
-    margin: 0.6rem 0;
-
-    span {
-        text-decoration: underline;
-      }
-
+  span {
+    text-decoration: underline;
+  }
 }
 
-p{
-    // border: 2px solid black; //pra identificar a box
+p {
+  // border: 2px solid black; //pra identificar a box
 }
 
 button {
-    background-color: rgb(47,227,131);
-    border: transparent;
-    color: vars.$textColor;
-    padding: 10px;
-    margin: 1rem auto;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1.7rem;
-    border-radius: 30px;
-    width: 100%;
-    cursor: pointer;
-    transition: all 0.6s ease-in-out;
-    &:hover {
-      transform: scale(1.05);
-    }
+  background-color: rgb(47, 227, 131);
+  border: transparent;
+  color: vars.$textColor;
+  padding: 10px;
+  margin: 1rem auto;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.7rem;
+  border-radius: 30px;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.6s ease-in-out;
+  &:hover {
+    transform: scale(1.05);
   }
-
-.bola{
-    border-radius: 50%;
-    object-fit: cover;
-
-    height: 7rem;
-    width: 7rem;
-
-    background-color: main.$bgMainColor;
-
-    border-width: 10px;
 }
 
-.anteriores-box{
-    background-color: blue;//pra identificar a box
-    
-    display: flex;
-    flex-direction: row;
-    flex-wrap:wrap;
+.bola {
+  border-radius: 50%;
+  object-fit: cover;
+  height: 7rem;
+  width: 7rem;
+  background-color: main.$bgMainColor;
+  border-width: 10px;
 }
 
-.tempo-box{
-    background-color: yellow;//pra identificar a box
+.anteriores-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-.tempo-nmr{
-    font-weight: 600;
-    font-size: 80px;
+.tempo-box {
+  background-color: yellow; //pra identificar a box
+}
+
+.tempo-nmr {
+  font-weight: 600;
+  font-size: 80px;
 }
 
 .tables {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-    gap: .5rem;
-    padding: .5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  gap: 0.5rem;
+  padding: 0.5rem;
 }
