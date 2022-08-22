@@ -113,8 +113,8 @@ const Home = () => {
         </div>
       </main>
       <footer>
-      <p>Mais um produto das organizações capivara!</p>
-    </footer>
+        <p>Mais um produto das organizações capivara!</p>
+      </footer>
   </>
   );
 };
