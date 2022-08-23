@@ -1,6 +1,6 @@
 import Cartela from "components/cartela";
 import Timer from "components/Timer";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { DrawNumbersService } from "service/DrawNumberService";
 import { DrawNumbers } from "types/interfaces";
 import "./style.scss";
@@ -20,8 +20,6 @@ const GameBox = () => {
     const payloadCreate = await DrawNumbersService.Post(drawnNumber);
 
     if (payloadCreate) {
-      console.log(payloadCreate.data);
-      console.log("Numeros sorteados criados");
       setDrawnNumber(payloadCreate.data);
       setBingoBtn(true);
       setTimer(true);
@@ -43,7 +41,7 @@ const GameBox = () => {
         console.log("Rota configurada");
         console.log(payloadBingo.data);
       } else {
-        console.log("Erro ao configurar a rota");
+        alert("Algo de errado não está certo!");
       }
     }
   };
