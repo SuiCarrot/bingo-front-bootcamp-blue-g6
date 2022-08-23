@@ -26,10 +26,8 @@ const Timer = ({ seconds, drawnNumber, setDrawnNumber }: Props) => {
 
   const randomNumbers = async () => {
     const payloadPatch = await DrawNumbersService.Patch(drawnNumber.id, drawnNumber);
-    console.log(payloadPatch?.data);
 
     if (payloadPatch) {
-      console.log('Modificando os numeros sorteados')
       setDrawnNumber(payloadPatch.data);
     }
     else {
