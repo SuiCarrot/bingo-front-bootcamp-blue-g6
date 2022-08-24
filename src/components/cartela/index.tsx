@@ -1,12 +1,9 @@
-import { useMatch } from "context/matchContext";
 import { useEffect, useState } from "react";
 import { CardService } from "service/CardService";
-import { Cards, MatchGameContextType } from "types/interfaces";
+import { Cards } from "types/interfaces";
 import "./style.scss";
 
 const Cartela = () => {
-  const { valuesMatch } = useMatch() as MatchGameContextType;
-
   const [CardId, setCardId] = useState<Cards>();
 
   const getCardMatch = async () => {

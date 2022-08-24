@@ -1,13 +1,16 @@
+import { useMatch } from "context/matchContext";
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { CardService } from "service/CardService";
 import { Login } from "service/LoginPlayer";
-import { PlayerLogin } from "types/interfaces";
+import { MatchGameContextType, PlayerLogin } from "types/interfaces";
 import "./style.scss";
 
 const PlayerModal = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+
+  const { valuesMatch } = useMatch() as MatchGameContextType;
 
   const [valuesLogin, setValuesLogin] = useState<PlayerLogin>({
     name: "",
@@ -31,24 +34,27 @@ const PlayerModal = () => {
 
     if (payloadPlayer) {
       localStorage.setItem("playerId", payloadPlayer.data.id);
-      createCard();
+      generateNumbersCard();
     } else {
       alert("Error");
     }
   };
 
-  const createCard = async () => {
-    const payloadCard = await CardService.CreateCardGame({
-      id: "",
-      numbers: [],
-      playerId: localStorage.getItem(`playerId`),
-    });
+  const generateNumbersCard = async () => {
+    const playerId = localStorage.getItem("playerId");
+    const payloadCard = await CardService.GenerateNumbersCard(
+      valuesMatch.numberOfCards,
+      playerId
+    );
 
     if (payloadCard) {
-      localStorage.setItem('cardId', payloadCard.data.id);
-      navigate('/capybaraGame');
+      // payloadCard.data.map((card: any, index: number) => localStorage.setItem(`card_${index}_id`, card.id))
+      localStorage.setItem('cardId', payloadCard.data[0].id);
+      navigate("/capybaraGame");
+      console.log(payloadCard.data);
+      console.log("Numeros gerados com sucesso!");
     } else {
-      alert("Erro");
+      alert("Erro ao gerar os numeros do(s) card(s)!");
     }
   };
 
