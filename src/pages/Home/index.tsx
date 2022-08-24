@@ -1,24 +1,14 @@
 import { useMatch } from "context/matchContext";
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import { Login } from "service/LoginPlayer";
 import { MatchService } from "service/MatchService";
-import { MatchGame, MatchGameContextType, PlayerLogin } from "types/interfaces";
+import { MatchGameContextType } from "types/interfaces";
 import "./style.scss";
 
 const Home = () => {
   const navigate = useNavigate();
 
   const { valuesMatch, setValuesMatch } = useMatch() as MatchGameContextType;
-
-  // const [valuesMatch, setValuesMatch] = useState<MatchGame>({
-  //   name: "",
-  //   numberOfCards: 0,
-  //   numberOfRounds: 0,
-  //   drawTime: 0,
-  //   link: "",
-  //   winner: "",
-  // });
 
   const handleValuesMatch = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (
