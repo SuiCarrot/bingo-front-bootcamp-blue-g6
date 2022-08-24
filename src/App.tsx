@@ -1,12 +1,15 @@
-import { BrowserRouter } from 'react-router-dom';
-import './App.scss';
-import Routers from './routes/routes';
+import { MatchContext } from "context/matchContext";
+import { BrowserRouter } from "react-router-dom";
+import "./App.scss";
+import Routers from "./routes/routes";
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routers />
-    </BrowserRouter>
+    <MatchContext>
+      <BrowserRouter>
+        <Routers />
+      </BrowserRouter>
+    </MatchContext>
   );
 }
 
