@@ -23,6 +23,11 @@ interface MatchGame {
     winner?: string;
 }
 
+interface MatchGameContextType {
+    valuesMatch: MatchGame;
+    setValuesMatch: (values: MatchGame) => void
+}
+
 interface DrawNumbers {
     id?: string;
     actualNumber: number[];
@@ -35,5 +40,6 @@ export type {
     PlayerLogin,
     Cards,
     MatchGame,
+    MatchGameContextType,
     DrawNumbers,
 }

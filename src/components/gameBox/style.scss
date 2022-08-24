@@ -48,6 +48,22 @@
     text-decoration: underline;
   }
 }
+      
+      .tempo-nmr {
+        font-weight: 600;
+        font-size: 80px;
+      }
+    }
+    .anteriores-box {
+      display: flex;
+      flex-direction: column;
+
+      
+
+      .box-bolas-anteriores{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
 
 p {
   // border: 2px solid black; //pra identificar a box
