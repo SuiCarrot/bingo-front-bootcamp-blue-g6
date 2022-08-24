@@ -1,21 +1,24 @@
+import { useMatch } from "context/matchContext";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Login } from "service/LoginPlayer";
 import { MatchService } from "service/MatchService";
-import { MatchGame, PlayerLogin } from "types/interfaces";
+import { MatchGame, MatchGameContextType, PlayerLogin } from "types/interfaces";
 import "./style.scss";
 
 const Home = () => {
   const navigate = useNavigate();
 
-  const [valuesMatch, setValuesMatch] = useState<MatchGame>({
-    name: "",
-    numberOfCards: 0,
-    numberOfRounds: 0,
-    drawTime: 0,
-    link: "",
-    winner: "",
-  });
+  const { valuesMatch, setValuesMatch } = useMatch() as MatchGameContextType;
+
+  // const [valuesMatch, setValuesMatch] = useState<MatchGame>({
+  //   name: "",
+  //   numberOfCards: 0,
+  //   numberOfRounds: 0,
+  //   drawTime: 0,
+  //   link: "",
+  //   winner: "",
+  // });
 
   const handleValuesMatch = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (
@@ -23,15 +26,15 @@ const Home = () => {
       e.target.name === "numberOfRounds" ||
       e.target.name === "numberOfCards"
     ) {
-      setValuesMatch((values: MatchGame) => ({
-        ...values,
+      setValuesMatch({
+        ...valuesMatch,
         [e.target.name]: parseInt(e.target.value),
-      }));
+      });
     } else {
-      setValuesMatch((values: MatchGame) => ({
-        ...values,
+      setValuesMatch({
+        ...valuesMatch,
         [e.target.name]: e.target.value,
-      }));
+      });
     }
   };
 
