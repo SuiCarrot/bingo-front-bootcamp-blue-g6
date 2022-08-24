@@ -48,7 +48,8 @@ const PlayerModal = () => {
     );
 
     if (payloadCard) {
-      localStorage.setItem('cardId', payloadCard.data.map());
+      // payloadCard.data.map((card: any, index: number) => localStorage.setItem(`card_${index}_id`, card.id))
+      localStorage.setItem('cardId', payloadCard.data[0].id);
       navigate("/capybaraGame");
       console.log(payloadCard.data);
       console.log("Numeros gerados com sucesso!");
