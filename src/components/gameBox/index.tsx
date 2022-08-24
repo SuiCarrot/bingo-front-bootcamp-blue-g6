@@ -59,16 +59,24 @@ const GameBox = () => {
 
   return (
     <div className="container-box">
-      <div className="title">bola atual</div>
+      <h3 className="title">bola atual</h3>
       <div className="infos">
-        <div className="anteriores-box">
-          <p>anteriores</p>
-
-          <p>{drawnNumber.lastNumbers}</p>
+        <div className="anteriores-box box-menu-superior">
+            <h3 className="sub-titulo-superior">anteriores</h3>
+          <div className="box-bolas-anteriores">
+            <p className="bolas-anteriores">{drawnNumber.lastNumbers[0]}</p>
+            <p className="bolas-anteriores">{drawnNumber.lastNumbers[1]}</p>
+            <p className="bolas-anteriores">{drawnNumber.lastNumbers[2]}</p>
+            <p className="bolas-anteriores">{drawnNumber.lastNumbers[3]}</p>
+            <p className="bolas-anteriores">{drawnNumber.lastNumbers[4]}</p>
+            <p className="bolas-anteriores">{drawnNumber.lastNumbers[5]}</p>
+          </div>
         </div>
-        <div>
-          <div className="bola" />
-          <p>{drawnNumber.actualNumber}</p>
+
+        <div className='box-menu-superior'>
+          <div className='bola-sorteada'>
+            <p  className="bola">{drawnNumber.actualNumber}</p>
+          </div>
           <div>
             {bingoBtn === true ? (
               <button onClick={handleBingo}>
@@ -80,8 +88,8 @@ const GameBox = () => {
             )}
           </div>
         </div>
-        <div className="tempo-box">
-          tempo
+        <div className="tempo-box box-menu-superior">
+          <h3 className="sub-titulo-superior">tempo</h3>
           <div className="tempo-nmr">
             {timer === true ? (
               <Timer
