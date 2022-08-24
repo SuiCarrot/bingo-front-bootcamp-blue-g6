@@ -7,7 +7,7 @@ import { DrawNumbers, MatchGameContextType } from "types/interfaces";
 import "./style.scss";
 
 const GameBox = () => {
-  const { valuesMatch, setValuesMatch } = useMatch() as MatchGameContextType;
+  const { valuesMatch } = useMatch() as MatchGameContextType;
 
   const [drawnNumber, setDrawnNumber] = useState<DrawNumbers>({
     id: "",
@@ -97,7 +97,7 @@ const GameBox = () => {
       </div>
 
       <div className="tables">
-        {}
+        {numberOfCards()}
       </div>
     </div>
   );
