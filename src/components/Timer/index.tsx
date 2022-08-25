@@ -20,8 +20,8 @@ const Timer = ({ seconds, drawnNumber, setDrawnNumber }: Props) => {
   };
 
   const reset = () => {
-    setTime({ seconds: seconds });
     randomNumbers();
+    setTime({ seconds: seconds });
   };
 
   const randomNumbers = async () => {
