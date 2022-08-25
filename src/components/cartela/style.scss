@@ -10,8 +10,9 @@ table {
   background-color: vars.$bgColorDefault;
   border: 2px solid #000;
   border-radius: 10px;
-  width: 285px;
-  height: 345px;
+  width: 265px;
+  height: 320px;
+  margin:15px;
 
   .card-title {
     font-family: vars.$fontTitle;

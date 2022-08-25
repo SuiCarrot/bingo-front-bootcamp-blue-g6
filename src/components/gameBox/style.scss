@@ -2,14 +2,10 @@
 @use "../../assets/styles/vars";
 
 .container-box {
-  height: 90%;
+  max-height: 70%;
   width: 70%;
-  left: 34vh;
-  top: 0;
   background-color: main.$bgColorDefault;
-  border-radius: 0px 20px 20px 0px;
-  // display: flex;
-  // justify-content: flex-end
+  border-radius: 16px;
 }
 
 .title {
@@ -49,21 +45,29 @@
   }
 }
       
-      .tempo-nmr {
-        font-weight: 600;
-        font-size: 80px;
-      }
-      
-    .anteriores-box {
-      display: flex;
-      flex-direction: column;
+.tempo-nmr {
+  font-weight: 600;
+  font-size: 50px;
+}
 
-      .box-bolas-anteriores{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-      }
-    }
+.anteriores-box {
+display: flex;
+flex-direction: column;
+}
+.box-bolas-anteriores{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.bolas-anteriores{
+padding: 8px ;
+margin:2px;
+font-size: 22px;
+border-radius: 50%;
+background-color: #707070;
+color: #fff;
+}      
 
 button {
   background-color: rgb(47, 227, 131);
@@ -82,35 +86,27 @@ button {
     transform: scale(1.05);
   }
 }
+.box-menu-superior{
+  width: 33%;
+}
+.sub-titulo-superior{
+  font-size:32px;
+}
+.bola-sorteada{
+  display:flex;
+  justify-content: center;
+  align-self: center;
+}
 
 .bola {
+  text-align:center;
+  padding:18px;
   border-radius: 50%;
-  object-fit: cover;
-  height: 7rem;
-  width: 7rem;
   background-color: main.$bgMainColor;
-  border-width: 10px;
-}
-
-.anteriores-box {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-.tempo-box {
-  background-color: yellow; //pra identificar a box
-}
-
-.tempo-nmr {
-  font-weight: 600;
-  font-size: 80px;
+  color: #fff;
 }
 
 .tables {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
-  gap: 0.5rem;
-  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
 }

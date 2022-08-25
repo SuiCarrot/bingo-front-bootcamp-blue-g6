@@ -67,6 +67,8 @@ const GameBox = () => {
             <p className="bolas-anteriores">{drawnNumber.lastNumbers[0]}</p>
             <p className="bolas-anteriores">{drawnNumber.lastNumbers[1]}</p>
             <p className="bolas-anteriores">{drawnNumber.lastNumbers[2]}</p>
+          </div>
+          <div className="box-bolas-anteriores">
             <p className="bolas-anteriores">{drawnNumber.lastNumbers[3]}</p>
             <p className="bolas-anteriores">{drawnNumber.lastNumbers[4]}</p>
             <p className="bolas-anteriores">{drawnNumber.lastNumbers[5]}</p>
