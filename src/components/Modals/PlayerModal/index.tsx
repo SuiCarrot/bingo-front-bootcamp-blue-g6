@@ -65,6 +65,7 @@ const PlayerModal = () => {
 
         <form onSubmit={handleSubmit} className="submit-player">
           <input
+            autoComplete ="off"
             type="text"
             placeholder="digite seu nome"
             name="name"

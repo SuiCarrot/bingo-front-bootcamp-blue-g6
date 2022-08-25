@@ -50,6 +50,7 @@ const Home = () => {
 
           <form onSubmit={handleLogin} className="content-box">
             <input
+              autoComplete ="off"
               className="nome-sala"
               type="text"
               placeholder="insira o nome da sala"
@@ -59,6 +60,7 @@ const Home = () => {
               required
             />
             <input
+              autoComplete ="off"
               className="quantidade-cartelas"
               type="text"
               placeholder="quantidade de cartelas por jogador"
@@ -68,6 +70,7 @@ const Home = () => {
               required
             />
             <input
+              autoComplete ="off"
               className="quantidade-partidas"
               type="text"
               placeholder="quantas partidas deseja jogar?"
@@ -78,6 +81,7 @@ const Home = () => {
             />
 
             <input
+              autoComplete ="off"
               className="quantidade-partidas"
               type="text"
               placeholder="Tempo de sorteio?"
