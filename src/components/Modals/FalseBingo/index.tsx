@@ -3,10 +3,19 @@ import ContainerModal from "../ContainerModals";
 import "material-icons/iconfont/material-icons.css";
 import "./style.scss";
 
-const FalseBingoModal = () => {
+interface Prop {
+  closeModal: (value: any) => void
+}
+
+const FalseBingoModal = ({closeModal}: Prop) => {
+  const handleCloseModal = () => {
+    localStorage.removeItem('bingoResult')
+    closeModal(false);
+  }
+
   return (
     <ContainerModal>
-      <div className="content">
+      <div className="content" onClick={handleCloseModal}>
         <span className="material-icons">warning_amber</span>
 
         <h2>Errrrrrou!</h2>
