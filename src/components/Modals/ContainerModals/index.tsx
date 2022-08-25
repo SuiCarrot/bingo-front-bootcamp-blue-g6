@@ -1,4 +1,5 @@
 import { ReactNode } from "react";
+import Overlay from "../Overlay";
 import "./style.scss";
 
 interface ModalProps {
@@ -7,9 +8,11 @@ interface ModalProps {
 
 const ContainerModal = (props: ModalProps) => {
   return (
-    <section className="containerModal">
-      <div className="childrenProp">{props.children}</div>
-    </section>
+    <Overlay>
+      <section className="containerModal">
+        <div className="childrenProp">{props.children}</div>
+      </section>
+    </Overlay>
   );
 };
 
