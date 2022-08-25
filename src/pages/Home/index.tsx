@@ -59,26 +59,6 @@ const Home = () => {
               onChange={handleValuesMatch}
               required
             />
-            <input
-              autoComplete ="off"
-              className="quantidade-cartelas"
-              type="text"
-              placeholder="quantidade de cartelas por jogador"
-              name="numberOfCards"
-              id="numberOfCards"
-              onChange={handleValuesMatch}
-              required
-            />
-            <input
-              autoComplete ="off"
-              className="quantidade-partidas"
-              type="text"
-              placeholder="quantas partidas deseja jogar?"
-              name="numberOfRounds"
-              id="numberOfRounds"
-              onChange={handleValuesMatch}
-              required
-            />
 
             <input
               autoComplete ="off"
@@ -90,25 +70,6 @@ const Home = () => {
               onChange={handleValuesMatch}
               required
             />
-
-            <div className="game-mode">
-              <input
-                className="selector-game-mode"
-                type="radio"
-                id="singleplayer"
-                name="game_mode"
-                value="singleplayer"
-              />
-              <label>singleplayer</label>
-              <input
-                className="selector-game-mode"
-                type="radio"
-                id="multiplayer"
-                name="game_mode"
-                value="multiplayer"
-              />
-              <label>multiplayer</label>
-            </div>
 
             <button type="submit">JOGAR</button>
           </form>
