@@ -11,7 +11,7 @@ export const MatchContext = ({ children }: Props) => {
   const [valuesMatch, setValuesMatch] = useState<MatchGame>({
     id: '',
     name: "",
-    numberOfCards: 0,
+    numberOfCards: 1,
     numberOfRounds: 0,
     drawTime: 0,
     link: "",
