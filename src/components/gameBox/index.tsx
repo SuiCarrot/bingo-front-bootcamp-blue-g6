@@ -41,8 +41,7 @@ const GameBox = () => {
       );
 
       if (payloadBingo) {
-        console.log("Rota configurada");
-        console.log(payloadBingo.data);
+        localStorage.setItem('bingoResult', payloadBingo.data)
       } else {
         alert("Algo de errado não está certo!");
       }
