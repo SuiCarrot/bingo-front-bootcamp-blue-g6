@@ -1,7 +1,10 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import Cartela from "components/cartela";
+import BingoModal from "components/Modals/BingoModal";
+import FalseBingoModal from "components/Modals/FalseBingo";
 import Timer from "components/Timer";
 import { useMatch } from "context/matchContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { DrawNumbersService } from "service/DrawNumberService";
 import { DrawNumbers, MatchGameContextType } from "types/interfaces";
 import "./style.scss";
@@ -18,6 +21,29 @@ const GameBox = () => {
   });
   const [bingoBtn, setBingoBtn] = useState(false);
   const [timer, setTimer] = useState(false);
+
+  const [resultBingo, setResultBingo] = useState<Boolean | undefined | null>(
+    null
+  );
+
+  const [bingoModal, setBingoModal] = useState(false);
+  const [falseBingoModal, setFalseBingoModal] = useState(false);
+
+  const [showModal, setShowModal] = useState(false);
+
+  const renderModal = () => {
+    console.log("Estado:" + resultBingo);
+
+    if (resultBingo === false) {
+      setShowModal(true);
+      setFalseBingoModal(true);
+      setResultBingo(null);
+    } else if (resultBingo === true) {
+      setShowModal(true);
+      setBingoModal(true);
+      setResultBingo(null);
+    }
+  };
 
   const handleStart = async () => {
     const payloadCreate = await DrawNumbersService.Post(drawnNumber);
@@ -41,7 +67,7 @@ const GameBox = () => {
       );
 
       if (payloadBingo) {
-        localStorage.setItem('bingoResult', payloadBingo.data)
+        setResultBingo(payloadBingo.data);
       } else {
         alert("Algo de errado não está certo!");
       }
@@ -51,17 +77,21 @@ const GameBox = () => {
   const numberOfCards = () => {
     const array = [];
     for (let i = 0; i < valuesMatch.numberOfCards; i++) {
-      array.push(<Cartela key={i} />)
+      array.push(<Cartela key={i} />);
     }
-    return <div>{array}</div>
-  }
+    return <div>{array}</div>;
+  };
+
+  useEffect(() => {
+    renderModal();
+  }, [handleBingo]);
 
   return (
     <div className="container-box">
       <h3 className="title">bola atual</h3>
       <div className="infos">
         <div className="anteriores-box box-menu-superior">
-            <h3 className="sub-titulo-superior">anteriores</h3>
+          <h3 className="sub-titulo-superior">anteriores</h3>
           <div className="box-bolas-anteriores">
             <p className="bolas-anteriores">{drawnNumber.lastNumbers[0]}</p>
             <p className="bolas-anteriores">{drawnNumber.lastNumbers[1]}</p>
@@ -72,9 +102,9 @@ const GameBox = () => {
           </div>
         </div>
 
-        <div className='box-menu-superior'>
-          <div className='bola-sorteada'>
-            <p  className="bola">{drawnNumber.actualNumber}</p>
+        <div className="box-menu-superior">
+          <div className="bola-sorteada">
+            <p className="bola">{drawnNumber.actualNumber}</p>
           </div>
           <div>
             {bingoBtn === true ? (
@@ -103,9 +133,13 @@ const GameBox = () => {
         </div>
       </div>
 
-      <div className="tables">
-        {numberOfCards()}
-      </div>
+      <div className="tables">{numberOfCards()}</div>
+
+      {falseBingoModal && showModal && (
+        <FalseBingoModal closeModal={setShowModal} />
+      )}
+
+      {bingoModal && showModal && <BingoModal closeModal={setShowModal} />}
     </div>
   );
 };
