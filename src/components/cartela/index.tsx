@@ -141,7 +141,7 @@ const Cartela = () => {
 
   return (
     <table>
-      <thead className="card-title">Cartela 01</thead>
+      <thead className="card-title">Cartela</thead>
 
       <tbody>
         <tr>
