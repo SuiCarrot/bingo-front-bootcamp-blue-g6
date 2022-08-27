@@ -1,8 +1,6 @@
-import React from "react";
-import ContainerModal from "../ContainerModals";
 import "material-icons/iconfont/material-icons.css";
+import ContainerModal from "../ContainerModals";
 import "./style.scss";
-import { useNavigate } from "react-router-dom";
 
 interface Prop {
   closeModal: (value: any) => void;
