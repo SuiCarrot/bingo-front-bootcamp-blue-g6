@@ -13,6 +13,11 @@ interface Cards {
     playerId: string | null;
 }
 
+interface CardsContextType {
+    quantityCards: Cards[];
+    setQuantityCards: (values: Cards[]) => void;
+}
+
 interface MatchGame {
     id?: string;
     name: string;
@@ -39,6 +44,7 @@ interface DrawNumbers {
 export type {
     PlayerLogin,
     Cards,
+    CardsContextType,
     MatchGame,
     MatchGameContextType,
     DrawNumbers,
