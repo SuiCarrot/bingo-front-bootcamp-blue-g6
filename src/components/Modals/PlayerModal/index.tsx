@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { CardService } from "service/CardService";
 import { Login } from "service/LoginPlayer";
-import { MatchGameContextType, PlayerLogin } from "types/interfaces";
+import { Cards, MatchGameContextType, PlayerLogin } from "types/interfaces";
 import "./style.scss";
 
 const PlayerModal = () => {
@@ -19,6 +19,14 @@ const PlayerModal = () => {
     isHost: false,
     matchId: id,
   });
+
+  const [quantityCards, setQuantityCards] = useState<Cards[]>([
+    {
+      id: "",
+      numbers: [],
+      playerId: "",
+    },
+  ]);
 
   const handleValuesPlayer = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValuesLogin((values: PlayerLogin) => ({
@@ -49,7 +57,8 @@ const PlayerModal = () => {
 
     if (payloadCard) {
       // payloadCard.data.map((card: any, index: number) => localStorage.setItem(`card_${index}_id`, card.id))
-      localStorage.setItem('cardId', payloadCard.data[0].id);
+      localStorage.setItem("cardId", payloadCard.data[0].id);
+      setQuantityCards(payloadCard.data);
       navigate("/capybaraGame");
       console.log(payloadCard.data);
       console.log("Numeros gerados com sucesso!");
@@ -65,7 +74,7 @@ const PlayerModal = () => {
 
         <form onSubmit={handleSubmit} className="submit-player">
           <input
-            autoComplete ="off"
+            autoComplete="off"
             type="text"
             placeholder="digite seu nome"
             name="name"
