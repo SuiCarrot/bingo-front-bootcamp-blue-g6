@@ -13,7 +13,7 @@ export const MatchContext = ({ children }: Props) => {
     name: "",
     numberOfCards: 1,
     numberOfRounds: 0,
-    drawTime: 0,
+    drawTime: 5,
     link: "",
     winner: "",
   });
