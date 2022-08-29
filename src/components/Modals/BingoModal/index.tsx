@@ -12,6 +12,8 @@ const BingoModal = ({ closeModal }: Prop) => {
 
   const handleCloseModal = () => {
     closeModal(false);
+    localStorage.removeItem('cardId');
+    localStorage.removeItem('playerId');
     navigate("/");
   };
 
