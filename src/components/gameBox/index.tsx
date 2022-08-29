@@ -32,8 +32,6 @@ const GameBox = () => {
   const [showModal, setShowModal] = useState(false);
 
   const renderModal = () => {
-    console.log("Estado:" + resultBingo);
-
     if (resultBingo === false) {
       setShowModal(true);
       setFalseBingoModal(true);
@@ -72,14 +70,6 @@ const GameBox = () => {
         alert("Algo de errado não está certo!");
       }
     }
-  };
-
-  const numberOfCards = () => {
-    const array = [];
-    for (let i = 0; i < valuesMatch.numberOfCards; i++) {
-      array.push(<Cartela key={i} />);
-    }
-    return <div>{array}</div>;
   };
 
   useEffect(() => {
@@ -135,7 +125,9 @@ const GameBox = () => {
         </div>
       </div>
 
-      <div className="tables">{numberOfCards()}</div>
+      <div className="tables">
+        <Cartela />
+      </div>
 
       {falseBingoModal && showModal && (
         <FalseBingoModal closeModal={setShowModal} />
