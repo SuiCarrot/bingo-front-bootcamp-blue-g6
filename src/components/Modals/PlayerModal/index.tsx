@@ -1,9 +1,14 @@
+import { useCards } from "context/CardsContext";
 import { useMatch } from "context/matchContext";
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { CardService } from "service/CardService";
 import { Login } from "service/LoginPlayer";
-import { Cards, MatchGameContextType, PlayerLogin } from "types/interfaces";
+import {
+  CardsContextType,
+  MatchGameContextType,
+  PlayerLogin
+} from "types/interfaces";
 import "./style.scss";
 
 const PlayerModal = () => {
@@ -12,6 +17,8 @@ const PlayerModal = () => {
 
   const { valuesMatch } = useMatch() as MatchGameContextType;
 
+  const { setQuantityCards } = useCards() as CardsContextType;
+
   const [valuesLogin, setValuesLogin] = useState<PlayerLogin>({
     name: "",
     avatar: "",
@@ -19,14 +26,6 @@ const PlayerModal = () => {
     isHost: false,
     matchId: id,
   });
-
-  const [quantityCards, setQuantityCards] = useState<Cards[]>([
-    {
-      id: "",
-      numbers: [],
-      playerId: "",
-    },
-  ]);
 
   const handleValuesPlayer = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValuesLogin((values: PlayerLogin) => ({
@@ -56,12 +55,8 @@ const PlayerModal = () => {
     );
 
     if (payloadCard) {
-      // payloadCard.data.map((card: any, index: number) => localStorage.setItem(`card_${index}_id`, card.id))
-      localStorage.setItem("cardId", payloadCard.data[0].id);
       setQuantityCards(payloadCard.data);
       navigate("/capybaraGame");
-      console.log(payloadCard.data);
-      console.log("Numeros gerados com sucesso!");
     } else {
       alert("Erro ao gerar os numeros do(s) card(s)!");
     }
