@@ -1,9 +1,14 @@
+import { useCards } from "context/CardsContext";
 import { useMatch } from "context/matchContext";
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { CardService } from "service/CardService";
 import { Login } from "service/LoginPlayer";
-import { MatchGameContextType, PlayerLogin } from "types/interfaces";
+import {
+  CardsContextType,
+  MatchGameContextType,
+  PlayerLogin
+} from "types/interfaces";
 import "./style.scss";
 
 const PlayerModal = () => {
@@ -11,6 +16,8 @@ const PlayerModal = () => {
   const navigate = useNavigate();
 
   const { valuesMatch } = useMatch() as MatchGameContextType;
+
+  const { setQuantityCards } = useCards() as CardsContextType;
 
   const [valuesLogin, setValuesLogin] = useState<PlayerLogin>({
     name: "",
@@ -48,11 +55,8 @@ const PlayerModal = () => {
     );
 
     if (payloadCard) {
-      // payloadCard.data.map((card: any, index: number) => localStorage.setItem(`card_${index}_id`, card.id))
-      localStorage.setItem('cardId', payloadCard.data[0].id);
+      setQuantityCards(payloadCard.data);
       navigate("/capybaraGame");
-      console.log(payloadCard.data);
-      console.log("Numeros gerados com sucesso!");
     } else {
       alert("Erro ao gerar os numeros do(s) card(s)!");
     }
@@ -65,7 +69,7 @@ const PlayerModal = () => {
 
         <form onSubmit={handleSubmit} className="submit-player">
           <input
-            autoComplete ="off"
+            autoComplete="off"
             type="text"
             placeholder="digite seu nome"
             name="name"
