@@ -59,14 +59,31 @@ const Home = () => {
               onChange={handleValuesMatch}
               required
             />
+            
+            <span className="rangeValueTime">Tempo de sorteio: {valuesMatch.drawTime} seg</span>
 
             <input
               autoComplete ="off"
               className="quantidade-partidas"
-              type="text"
-              placeholder="Tempo de sorteio?"
+              type="range"
+              min={5}
+              max={25}
               name="drawTime"
               id="drawTime"
+              onChange={handleValuesMatch}
+              required
+            />
+
+            <span className="rangeValueCard">Cartelas: {valuesMatch.numberOfCards}</span>
+
+            <input
+              autoComplete ="off"
+              className="quantidade-cartelas"
+              type="range"
+              min={1}
+              max={3}
+              name="numberOfCards"
+              id="numberOfCards"
               onChange={handleValuesMatch}
               required
             />
