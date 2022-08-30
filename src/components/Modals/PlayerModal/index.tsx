@@ -56,6 +56,7 @@ const PlayerModal = () => {
 
     if (payloadCard) {
       setQuantityCards(payloadCard.data);
+      localStorage.setItem('cardId', payloadCard.data[0].id);
       navigate("/capybaraGame");
     } else {
       alert("Erro ao gerar os numeros do(s) card(s)!");
