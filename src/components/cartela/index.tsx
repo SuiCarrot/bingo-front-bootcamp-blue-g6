@@ -31,7 +31,8 @@ const Cartela = () => {
   const [changeColorTwentythree, setchangeColorTwentythree] = useState(false);
   const [changeColorTwentyfour, setchangeColorTwentyfour] = useState(false);
 
-  const toggleOne = () => {
+  const toggleOne = (e: React.MouseEvent) => {
+    console.log(e.currentTarget)
     setchangeColorOne(!changeColorOne);
   };
   const toggleTwo = () => {
@@ -121,7 +122,7 @@ const Cartela = () => {
   return (
     <>
       {quantityCards.map((card, index) => (
-        <table key={index}>
+        <table key={card.id}>
           <thead className="card-title">Cartela {index + 1}</thead>
 
           <tbody>
