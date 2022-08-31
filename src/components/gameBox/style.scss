@@ -58,14 +58,19 @@
   justify-content: center;
 }
 
-.bolas-anteriores {
-  padding: 8px;
-  margin: 2px;
-  font-size: 22px;
-  border-radius: 50%;
-  background-color: #707070;
-  color: #fff;
-}
+
+.bolas-anteriores{
+padding: 8px ;
+margin:2px;
+font-size: 22px;
+border-radius: 50%;
+background-color: #707070;
+color: #fff;
+
+height: 5.5vh;
+width: 5.5vh;
+}      
+
 
 button {
   background-color: rgb(47, 227, 131);
@@ -103,6 +108,9 @@ button {
   border-radius: 50%;
   background-color: main.$bgMainColor;
   color: #fff;
+
+  height: 12vh;
+  width: 12vh;
 }
 
 .tables {

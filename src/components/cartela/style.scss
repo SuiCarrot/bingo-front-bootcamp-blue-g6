@@ -26,7 +26,9 @@ table {
     font-size: 2rem;
     color: rgb(115, 115, 140);
     text-align: center;
-    cursor: pointer;
+
+    cursor: default;
+
   }
 
   td {
@@ -37,6 +39,7 @@ table {
     height: 40px;
     color: #000;
     text-align: center;
+
     cursor: pointer;
   }
 
@@ -50,4 +53,23 @@ table {
 .toggle--close{
   background-color: rgb(47, 227, 131);
   font-weight: bold;
+}
+
+.mark{
+  border: 1px solid rgb(112, 112, 112);
+  border-radius: 10px;
+  background: rgb(239, 239, 239);
+  width: 40px;
+  height: 40px;
+  color: #000;
+  text-align: center;
+}
+.mark2{
+  border: 1px solid rgb(112, 112, 112);
+  border-radius: 10px;
+  background: rgb(47, 227, 131);
+  width: 40px;
+  height: 40px;
+  color: #000;
+  text-align: center;
 }

@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'https://capivara-bingo.onrender.com'
+    baseURL: 'http://localhost:3333'
 })
 
 // http://localhost:3333 -- localhost
