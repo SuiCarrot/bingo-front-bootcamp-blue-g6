@@ -8,7 +8,7 @@ export function CardCartela(card: CartelaCard) {
     if (e.currentTarget.style.backgroundColor) {
       e.currentTarget.style.backgroundColor = null;
     } else {
-      e.currentTarget.style.backgroundColor = "green";
+      e.currentTarget.style.backgroundColor = "rgb(47, 227, 131)";
     }
     e.currentTarget.classList.add("mark", "mark1");
   };

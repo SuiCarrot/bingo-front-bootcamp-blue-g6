@@ -19,8 +19,7 @@ const FalseBingoModal = ({ closeModal }: Prop) => {
         <h2>Errrrrrou!</h2>
 
         <p>
-          Toma distraído! Você não fez bingo e agora vai passar{" "}
-          <strong>3 rodadas sem poder marcar!</strong>
+          Toma distraído! Você não fez bingo e agora vai passar!
         </p>
       </div>
     </ContainerModal>
