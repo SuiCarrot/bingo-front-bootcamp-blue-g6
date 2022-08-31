@@ -8,11 +8,17 @@ table {
   justify-content: center;
   align-items: center;
   background-color: vars.$bgColorDefault;
-  border: 2px solid #000;
+  border: 3px solid #73738c;
   border-radius: 10px;
   width: 265px;
   height: 320px;
   margin:15px;
+  transition: all ease .6s;
+
+  &:hover {
+    border-color: vars.$borderColor;
+    box-shadow: 10px 5px 10px vars.$bgOpacityColor;
+  }
 
   .card-title {
     font-family: vars.$fontTitle;
@@ -20,6 +26,7 @@ table {
     font-size: 2rem;
     color: rgb(115, 115, 140);
     text-align: center;
+    cursor: pointer;
   }
 
   td {
@@ -30,10 +37,12 @@ table {
     height: 40px;
     color: #000;
     text-align: center;
+    cursor: pointer;
   }
 
   .free {
     background: main.$borderColor;
+    cursor: default;
   }
 
 }

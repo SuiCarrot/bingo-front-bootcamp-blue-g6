@@ -11,13 +11,11 @@
 .title {
   border-bottom: 5px solid rgb(148, 57, 254);
   border-radius: 0px 20px 0px 0px;
-
   display: flex;
   justify-content: center;
-
   color: #707070;
-
   font-family: main.$fontTitle;
+  padding: .5rem;
   font-weight: 600;
   font-size: 7vh;
 }
@@ -44,30 +42,30 @@
     text-decoration: underline;
   }
 }
-      
+
 .tempo-nmr {
   font-weight: 600;
   font-size: 50px;
 }
 
 .anteriores-box {
-display: flex;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
-.box-bolas-anteriores{
+.box-bolas-anteriores {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 
-.bolas-anteriores{
-padding: 8px ;
-margin:2px;
-font-size: 22px;
-border-radius: 50%;
-background-color: #707070;
-color: #fff;
-}      
+.bolas-anteriores {
+  padding: 8px;
+  margin: 2px;
+  font-size: 22px;
+  border-radius: 50%;
+  background-color: #707070;
+  color: #fff;
+}
 
 button {
   background-color: rgb(47, 227, 131);
@@ -86,22 +84,22 @@ button {
     transform: scale(1.05);
   }
 }
-.box-menu-superior{
+.box-menu-superior {
   width: 33%;
 }
-.sub-titulo-superior{
-  font-size:32px;
+.sub-titulo-superior {
+  font-size: 32px;
 }
 
-.bola-sorteada{
-  display:flex;
+.bola-sorteada {
+  display: flex;
   justify-content: center;
   align-self: center;
 }
 
 .bola {
-  text-align:center;
-  padding:18px;
+  text-align: center;
+  padding: 18px;
   border-radius: 50%;
   background-color: main.$bgMainColor;
   color: #fff;
