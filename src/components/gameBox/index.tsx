@@ -22,7 +22,7 @@ const GameBox = () => {
   const [bingoBtn, setBingoBtn] = useState(false);
   const [timer, setTimer] = useState(false);
 
-  const [resultBingo, setResultBingo] = useState<Boolean | undefined | null>(
+  const [resultBingo, setResultBingo] = useState<boolean | undefined | null>(
     null
   );
 
@@ -78,7 +78,7 @@ const GameBox = () => {
 
   return (
     <div className="container-box">
-      <h3 className="title">bola atual</h3>
+      <h3 className="title">{valuesMatch.name}</h3>
       <div className="infos">
         <div className="anteriores-box box-menu-superior">
           <h3 className="sub-titulo-superior">anteriores</h3>
