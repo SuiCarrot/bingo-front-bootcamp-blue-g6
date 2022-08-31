@@ -1,5 +1,5 @@
 import { useCards } from "context/CardsContext";
-import { useState } from "react";
+import React, { useState } from "react";
 import { CardsContextType } from "types/interfaces";
 import "./style.scss";
 
@@ -119,10 +119,17 @@ const Cartela = () => {
     setchangeColorTwentyfour(!changeColorTwentyfour);
   };
 
+  const selectCard = (id: string | undefined) => {
+    console.log(id);
+    if (id) {
+      localStorage.setItem('cardId', id);
+    }
+  }
+
   return (
     <>
       {quantityCards.map((card, index) => (
-        <table key={card.id}>
+        <table key={card.id} onClick={() => selectCard(card.id)}>
           <thead className="card-title">Cartela {index + 1}</thead>
 
           <tbody>
