@@ -12,7 +12,7 @@ git clone https://github.com/SuiCarrot/bingo-front-bootcamp-blue-g6
 Clone o repositório na sua maquina e instale as dependencias utilizando:
 
 ```
-npm install
+yarn install
 ```
 
 ## ⚙️ Executando os testes
@@ -20,22 +20,31 @@ npm install
 Após a instalação das dependencias executar os testes na seguinte ordem:
 
 ```
-npm run start
+yarn start
 ```
 
 ## 🛠️ Construído com
 
 * Typescript
 * React
+* Nodejs
+* Yarn
+* Axios
 * Sass
 
 ## ✒️ Autores
 
 * **Bruno de Lucca** (https://github.com/SuiCarrot);
-* **Bruno Sallum** (https://github.com/B-Sallum)
-* **João Gomes** (https://github.com/jovic03)
-* **Karen Lourenço** (https://github.com/KarenMascarenhasLourenco)
-* **Pedro Oliveira** (https://github.com/pedroasdoliveira)
+* **Bruno Sallum** (https://github.com/B-Sallum);
+* **João Gomes** (https://github.com/jovic03);
+* **Karen Lourenço** (https://github.com/KarenMascarenhasLourenco);
+* **Pedro Oliveira** (https://github.com/pedroasdoliveira);
+
+## Linkedin
+
+* **Bruno de Lucca** (https://www.linkedin.com/in/bruno-de-lucca/);
+* **João Gomes** (https://www.linkedin.com/in/jo%C3%A3o-victor-gomes-da-silva-79722a229/);
+* **Pedro Oliveira** (https://www.linkedin.com/in/pedro-augusto-silva-de-oliveira/);
 
 ## Links
 

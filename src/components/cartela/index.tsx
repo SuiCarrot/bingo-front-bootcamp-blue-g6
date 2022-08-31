@@ -3,10 +3,8 @@ import { useCards } from "context/CardsContext";
 import { CardsContextType } from "types/interfaces";
 import "./style.scss";
 
-
-
 const Cartela = () => {
-  const { quantityCards } = useCards() as CardsContextType;  
+  const { quantityCards } = useCards() as CardsContextType;
 
   return (
     <>
@@ -16,6 +14,5 @@ const Cartela = () => {
     </>
   );
 };
-
 
 export default Cartela;
