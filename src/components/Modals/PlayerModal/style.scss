@@ -1,31 +1,35 @@
 @use "../../../assets/styles/vars";
 @import "../../../assets/styles/mixins";
-body{
-  display:flex;
-  justify-content:center;
+
+.main-playerContent {
   background-color: vars.$bgMainColor;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   .container-playerModal {
-    width: 100%;
+    width: 50%;
     height: auto;
     padding: 2rem;
     background-color: vars.$bgColorDefault;
     border-radius: 25px;
     cursor: default;
-    margin:30% 0;
-  
+
     .content-player {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       width: 100%;
-  
+
       h2 {
         @include titleStyle;
         color: vars.$bgMainColor;
         margin-bottom: 0.6rem;
       }
-  
+
       .submit-player {
         display: flex;
         flex-direction: column;
@@ -33,12 +37,12 @@ body{
         align-items: center;
         margin: 1rem auto;
         width: 100%;
-  
+
         input {
           width: 80%;
           height: 40px;
           text-align: center;
-          margin-bottom: .6rem;
+          margin-bottom: 0.6rem;
           border-radius: 10px;
           background-color: vars.$bgColorDefault;
           border-color: vars.$borderColor;
@@ -46,7 +50,7 @@ body{
           font-size: medium;
           box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.7);
         }
-  
+
         button {
           @include defaultButton;
           margin: 0;
@@ -56,5 +60,3 @@ body{
     }
   }
 }
-
-
