@@ -41,7 +41,6 @@ const GameBox = () => {
     if (resultBingo === false) {
       setShowModal(true);
       setFalseBingoModal(true);
-      setResultBingo(null);
     } else if (resultBingo === true) {
       setShowModal(true);
       setBingoModal(true);
@@ -131,6 +130,8 @@ const GameBox = () => {
                 seconds={valuesMatch.drawTime}
                 drawnNumber={drawnNumber}
                 setDrawnNumber={setDrawnNumber}
+                resultBingo={resultBingo}
+                setResultBingo={setResultBingo}
               />
             ) : (
               0
