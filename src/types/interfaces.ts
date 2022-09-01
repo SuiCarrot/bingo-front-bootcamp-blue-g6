@@ -7,6 +7,11 @@ interface PlayerLogin {
     matchId: string | undefined;
 }
 
+interface PlayerContext {
+    valuesLogin: PlayerLogin;
+    setValuesLogin: (values: PlayerLogin) => void;
+}
+
 interface Cards {
     id?: string;
     numbers: number[];
@@ -43,6 +48,7 @@ interface DrawNumbers {
 
 export type {
     PlayerLogin,
+    PlayerContext,
     Cards,
     CardsContextType,
     MatchGame,
