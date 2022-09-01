@@ -4,13 +4,19 @@ import BingoModal from "components/Modals/BingoModal";
 import FalseBingoModal from "components/Modals/FalseBingo";
 import Timer from "components/Timer";
 import { useMatch } from "context/matchContext";
+import { usePlayer } from "context/PlayerContext";
 import { useEffect, useState } from "react";
 import { DrawNumbersService } from "service/DrawNumberService";
-import { DrawNumbers, MatchGameContextType } from "types/interfaces";
+import {
+  DrawNumbers,
+  MatchGameContextType,
+  PlayerContext,
+} from "types/interfaces";
 import "./style.scss";
 
 const GameBox = () => {
   const { valuesMatch } = useMatch() as MatchGameContextType;
+  const { valuesLogin } = usePlayer() as PlayerContext;
 
   const [drawnNumber, setDrawnNumber] = useState<DrawNumbers>({
     id: "",
@@ -78,6 +84,14 @@ const GameBox = () => {
 
   return (
     <div className="container-box">
+      <div className="player-infos">
+        <img
+          className="player-avatar"
+          src={valuesLogin.avatar}
+          alt="foto de perfil do usuário"
+        />
+        <p className="player-name">{valuesLogin.name}</p>
+      </div>
       <h3 className="title">{valuesMatch.name}</h3>
       <div className="infos">
         <div className="anteriores-box box-menu-superior">
