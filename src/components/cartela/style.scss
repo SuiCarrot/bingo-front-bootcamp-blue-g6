@@ -52,6 +52,10 @@ table {
     border-radius: 10px;
     cursor: default;
   }
+
+  td{
+    cursor: pointer;
+  }
 }
 
 .toggle--close {
