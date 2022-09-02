@@ -168,17 +168,13 @@ button {
 
 .bola {
   text-align: center;
-  padding: 18px;
+  padding: 13px;
   border-radius: 50%;
   background-color: main.$bgMainColor;
   color: #fff;
   height: 12vh;
   width: 12vh;
   font-size: 2rem;
-
-  @media screen and (max-width: $medium-smartphone) {
-
-  }
 }
 
 .tables {

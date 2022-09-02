@@ -6,9 +6,11 @@ interface Props {
     seconds: number;
     drawnNumber: DrawNumbers;
     setDrawnNumber: Dispatch<DrawNumbers>;
+    resultBingo: boolean | undefined | null;
+    setResultBingo: (value: boolean | undefined | null) => void
 }
 
-const Timer = ({ seconds, drawnNumber, setDrawnNumber }: Props) => {
+const Timer = ({ seconds, drawnNumber, setDrawnNumber, resultBingo, setResultBingo }: Props) => {
   const [time, setTime] = useState({ seconds });
 
   const tick = () => {
@@ -21,7 +23,14 @@ const Timer = ({ seconds, drawnNumber, setDrawnNumber }: Props) => {
 
   const reset = () => {
     randomNumbers();
-    setTime({ seconds: seconds });
+    
+    if (resultBingo === false) {
+      setTime({ seconds: seconds * 3 });
+      setResultBingo(null);
+    }
+    else {
+      setTime({ seconds: seconds });
+    }
   };
 
   const randomNumbers = async () => {
