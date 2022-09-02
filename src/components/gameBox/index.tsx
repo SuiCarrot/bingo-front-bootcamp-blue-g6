@@ -10,7 +10,7 @@ import { DrawNumbersService } from "service/DrawNumberService";
 import {
   DrawNumbers,
   MatchGameContextType,
-  PlayerContext,
+  PlayerContext
 } from "types/interfaces";
 import "./style.scss";
 
@@ -32,18 +32,14 @@ const GameBox = () => {
     null
   );
 
-  const [bingoModal, setBingoModal] = useState(false);
-  const [falseBingoModal, setFalseBingoModal] = useState(false);
-
-  const [showModal, setShowModal] = useState(false);
+  const [showVictoryModal, setShowVictoryModal] = useState<boolean>(false);
+  const [showFalseModal, setShowFalseModal] = useState<boolean>(false);
 
   const renderModal = () => {
     if (resultBingo === false) {
-      setShowModal(true);
-      setFalseBingoModal(true);
+      setShowFalseModal(true);
     } else if (resultBingo === true) {
-      setShowModal(true);
-      setBingoModal(true);
+      setShowVictoryModal(true);
       setResultBingo(null);
     }
   };
@@ -71,6 +67,7 @@ const GameBox = () => {
 
       if (payloadBingo) {
         setResultBingo(payloadBingo.data);
+        renderModal();
       } else {
         alert("Algo de errado não está certo!");
       }
@@ -78,7 +75,7 @@ const GameBox = () => {
   };
 
   useEffect(() => {
-    renderModal();
+    console.log(resultBingo)
   }, [handleBingo]);
 
   return (
@@ -144,11 +141,11 @@ const GameBox = () => {
         <Cartela />
       </div>
 
-      {falseBingoModal && showModal && (
-        <FalseBingoModal closeModal={setShowModal} />
+      {showFalseModal && (
+        <FalseBingoModal closeModal={setShowFalseModal} />
       )}
 
-      {bingoModal && showModal && <BingoModal closeModal={setShowModal} />}
+      {showVictoryModal && <BingoModal closeModal={setShowVictoryModal} />}
     </div>
   );
 };
