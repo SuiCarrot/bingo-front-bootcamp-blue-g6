@@ -67,7 +67,7 @@ const Home = () => {
               className="quantidade-partidas"
               type="range"
               min={5}
-              max={25}
+              max={30}
               name="drawTime"
               id="drawTime"
               onChange={handleValuesMatch}
