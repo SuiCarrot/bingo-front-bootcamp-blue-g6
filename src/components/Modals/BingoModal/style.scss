@@ -1,8 +1,9 @@
 @use "../../../assets/styles/vars";
 @import "../../../assets/styles/mixins";
 
+$laptop: 998px;
 $tablet: 660px;
-$smartphone: 425px;
+$smartphone: 528px;
 
 .bingo-content {
   display: flex;
@@ -16,6 +17,10 @@ $smartphone: 425px;
     padding: 1rem;
   }
 
+  @media screen and (max-width: $smartphone) {
+    padding: 0;
+  }
+
   h2 {
     @include titleStyle;
     font-size: 6rem;
@@ -25,6 +30,15 @@ $smartphone: 425px;
 
     span {
       text-decoration: underline;
+    }
+
+    @media screen and (max-width: $laptop) {
+      font-size: 5rem;
+    }
+
+    @media screen and (max-width: $smartphone) {
+      font-size: 4rem;
+      margin-bottom: 3rem;
     }
   }
 
@@ -39,5 +53,13 @@ $smartphone: 425px;
     font-size: 1.8rem;
     text-align: center;
     font-weight: bold;
+
+    @media screen and (max-width: $laptop) {
+      font-size: 1.4rem;
+    }
+
+    @media screen and (max-width: $smartphone) {
+      font-size: 1.2rem;
+    }
   }
 }
