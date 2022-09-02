@@ -1,6 +1,10 @@
 @use "../../assets/styles/main.scss";
 @use "../../assets/styles/vars";
 
+$laptop: 1060px;
+$smal-tablet: 700px;
+$smartphone: 620px;
+
 table {
   border-spacing: 8px;
   display: flex;
@@ -12,12 +16,25 @@ table {
   border-radius: 10px;
   width: 265px;
   height: 320px;
-  margin:15px;
-  transition: all ease .6s;
+  padding: 6px;
+  transition: all ease 0.6s;
 
   &:hover {
     border-color: vars.$borderColor;
     box-shadow: 10px 5px 10px vars.$bgOpacityColor;
+  }
+
+  @media screen and (max-width: $laptop) {
+    margin: 5px auto;
+  }
+
+  @media screen and (max-width: $smal-tablet) {
+    width: 240px;
+    padding: 0;
+  }
+
+  @media screen and (max-width: $smartphone) {
+    margin: 5px 20px;
   }
 
   .card-title {
@@ -28,34 +45,21 @@ table {
     text-align: center;
 
     cursor: default;
-
-  }
-
-  td {
-    border: 1px solid rgb(112, 112, 112);
-    border-radius: 10px;
-    background: rgb(239, 239, 239);
-    width: 40px;
-    height: 40px;
-    color: #000;
-    text-align: center;
-
-    cursor: pointer;
   }
 
   .free {
     background: main.$borderColor;
+    border-radius: 10px;
     cursor: default;
   }
-
 }
 
-.toggle--close{
+.toggle--close {
   background-color: rgb(47, 227, 131);
   font-weight: bold;
 }
 
-.mark{
+.mark {
   border: 1px solid rgb(112, 112, 112);
   border-radius: 10px;
   background: rgb(239, 239, 239);
@@ -64,7 +68,7 @@ table {
   color: #000;
   text-align: center;
 }
-.mark2{
+.mark2 {
   border: 1px solid rgb(112, 112, 112);
   border-radius: 10px;
   background: rgb(47, 227, 131);

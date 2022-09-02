@@ -1,6 +1,9 @@
 @use "../../../assets/styles/vars";
 @import "../../../assets/styles/mixins";
 
+$tablet: 660px;
+$smartphone: 425px;
+
 .bingo-content {
   display: flex;
   flex-direction: column;
@@ -8,6 +11,10 @@
   align-items: center;
   padding: 2rem;
   color: #000;
+
+  @media screen and (max-width: $tablet) {
+    padding: 1rem;
+  }
 
   h2 {
     @include titleStyle;

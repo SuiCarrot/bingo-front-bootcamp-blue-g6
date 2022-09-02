@@ -1,6 +1,11 @@
 @use "../../../assets/styles/vars";
 @import "../../../assets/styles/mixins";
 
+$tablet: 865px;
+$smal-tablet: 625px;
+$smartphone: 460px;
+$smal-smartphone: 360px;
+
 .main-playerContent {
   background-color: vars.$bgMainColor;
   width: 100vw;
@@ -17,6 +22,18 @@
     border-radius: 25px;
     cursor: default;
 
+    @media screen and (max-width: $tablet) {
+      width: 62%;
+    }
+
+    @media screen and (max-width: $smal-tablet) {
+      width: 80%;
+    }
+
+    @media screen and (max-width: $smartphone) {
+      width: 92%;
+    }
+
     .content-player {
       display: flex;
       flex-direction: column;
@@ -28,6 +45,18 @@
         @include titleStyle;
         color: vars.$bgMainColor;
         margin-bottom: 0.6rem;
+
+        @media screen and (max-width: $smal-tablet) {
+          font-size: 1.8rem;
+        }
+
+        @media screen and (max-width: $smartphone) {
+          font-size: 1.6rem;
+        }
+
+        @media screen and (max-width: $smal-smartphone) {
+          font-size: 1.2rem;
+        }
       }
 
       .submit-player {
@@ -49,12 +78,20 @@
           outline: none;
           font-size: medium;
           box-shadow: 5px 3px 10px rgba(0, 0, 0, 0.7);
+
+          @media screen and (max-width: $smal-smartphone) {
+            width: 90%;
+          }
         }
 
         button {
           @include defaultButton;
           margin: 0;
           margin-top: 1rem;
+
+          @media screen and (max-width: $smal-smartphone) {
+            width: 95%;
+          }
         }
       }
     }
