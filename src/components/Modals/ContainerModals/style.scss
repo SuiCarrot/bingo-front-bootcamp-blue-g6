@@ -1,6 +1,9 @@
 @use "../../../assets/styles/vars";
 @import "../../../assets/styles/mixins";
 
+$large-tablet: 946px;
+$tablet: 660px;
+
 .containerModal {
   display: flex;
   flex-direction: column;
@@ -11,6 +14,14 @@
   padding: 2rem;
   background-color: vars.$bgColorDefault;
   border-radius: 25px;
+
+  @media screen and (max-width: $large-tablet) {
+    width: 75%;
+  }
+
+  @media screen and (max-width: $tablet) {
+    width: 85%;
+  }
 
   .childrenProp {
     @include bodyStyle;

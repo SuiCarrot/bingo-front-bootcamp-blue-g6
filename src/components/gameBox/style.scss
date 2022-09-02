@@ -1,10 +1,24 @@
 @use "../../assets/styles/main.scss";
 @use "../../assets/styles/vars";
 
+$laptop: 1060px;
+$tablet: 820px;
+$smal-tablet: 700px;
+$smartphone: 620px;
+$medium-smartphone: 470px;
+
 .container-box {
   max-height: 85%;
-  width: 75%;
+  width: 80%;
   border-radius: 16px;
+
+  @media screen and (max-width: $tablet) {
+    width: 85%;
+  }
+
+  @media screen and (max-width: $smartphone) {
+    width: 96%;
+  }
 }
 
 .player-infos {
@@ -12,7 +26,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: .6rem auto;
+  margin: 0.6rem auto;
 
   .player-avatar {
     width: 65px;
@@ -35,7 +49,7 @@
   justify-content: center;
   color: #707070;
   font-family: main.$fontTitle;
-  padding: .5rem;
+  padding: 0.5rem;
   font-weight: 600;
   font-size: 7vh;
 }
@@ -48,6 +62,7 @@
   padding-left: 30px;
   padding-right: 30px;
   padding-top: 30px;
+  padding-bottom: 15px;
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -56,6 +71,15 @@
   font-family: vars.$fontTitle;
   font-weight: 500;
   text-align: center;
+
+  @media screen and (max-width: $tablet) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  @media screen and (max-width: $smal-tablet) {
+    padding: 10px 5px;
+  }
 
   span {
     text-decoration: underline;
@@ -77,19 +101,21 @@
   justify-content: center;
 }
 
+.bolas-anteriores {
+  padding: 4px;
+  margin: 2px;
+  font-size: 1rem;
+  border-radius: 50%;
+  background-color: #707070;
+  color: #fff;
+  height: 5.5vh;
+  width: 5.5vh;
 
-.bolas-anteriores{
-padding: 8px ;
-margin:2px;
-font-size: 22px;
-border-radius: 50%;
-background-color: #707070;
-color: #fff;
-
-height: 5.5vh;
-width: 5.5vh;
-}      
-
+  @media screen and (max-width: $tablet) {
+    height: 4.5vh;
+    width: 4.5vh;
+  }
+}
 
 button {
   background-color: rgb(47, 227, 131);
@@ -107,12 +133,31 @@ button {
   &:hover {
     transform: scale(1.05);
   }
+
+  @media screen and (max-width: $tablet) {
+    width: 80%;
+    font-size: 1.4rem;
+  }
+
+  @media screen and (max-width: $medium-smartphone) {
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 8px;
+  }
 }
 .box-menu-superior {
   width: 33%;
 }
 .sub-titulo-superior {
   font-size: 32px;
+
+  @media screen and (max-width: $tablet) {
+    font-size: 25px;
+  }
+
+  @media screen and (max-width: $medium-smartphone) {
+    font-size: 20px;
+  }
 }
 
 .bola-sorteada {
@@ -127,15 +172,36 @@ button {
   border-radius: 50%;
   background-color: main.$bgMainColor;
   color: #fff;
-
   height: 12vh;
   width: 12vh;
+  font-size: 2rem;
+
+  @media screen and (max-width: $medium-smartphone) {
+
+  }
 }
 
 .tables {
   background-color: main.$bgColorDefault;
   border-radius: 0 0 10px 10px;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1rem;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+
+  @media screen and (max-width: $laptop) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  @media screen and (max-width: $smal-tablet) {
+    gap: .5rem;
+  }
+
+  @media screen and (max-width: $smartphone) {
+    gap: 0;
+  }
 }

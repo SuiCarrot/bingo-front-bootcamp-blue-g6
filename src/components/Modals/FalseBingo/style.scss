@@ -1,6 +1,9 @@
 @use "../../../assets/styles/vars";
 @import "../../../assets/styles/mixins";
 
+$tablet: 660px;
+$smartphone: 425px;
+
 .content {
   display: flex;
   flex-direction: column;
@@ -9,9 +12,23 @@
   padding: 2rem;
   color: #000;
 
+  @media screen and (max-width: $tablet) {
+    padding: 1rem;
+  }
+
   span {
     font-size: 8rem;
     margin-bottom: 2rem;
+
+    @media screen and (max-width: $tablet) {
+      font-size: 6rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @media screen and (max-width: $smartphone) {
+      font-size: 5rem;
+      margin-bottom: 1rem;
+    }
   }
 
   h2 {
@@ -19,6 +36,16 @@
     font-size: 4rem;
     color: #E41D38;
     margin-bottom: 2rem;
+
+    @media screen and (max-width: $tablet) {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+
+    @media screen and (max-width: $smartphone) {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
   }
 
   p {
@@ -27,6 +54,14 @@
     font-size: 1.5rem;
     font-weight: bold;
     color: #363637;
+
+    @media screen and (max-width: $tablet) {
+      font-size: 1.2rem;
+    }
+
+    @media screen and (max-width: $smartphone) {
+      font-size: 1rem;
+    }
 
     strong {
         font-weight: bold;
