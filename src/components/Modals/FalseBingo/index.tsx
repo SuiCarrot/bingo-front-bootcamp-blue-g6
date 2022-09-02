@@ -3,7 +3,7 @@ import ContainerModal from "../ContainerModals";
 import "./style.scss";
 
 interface Prop {
-  closeModal: (value: any) => void;
+  closeModal: (value: boolean) => void;
 }
 
 const FalseBingoModal = ({ closeModal }: Prop) => {
@@ -19,7 +19,7 @@ const FalseBingoModal = ({ closeModal }: Prop) => {
         <h2>Errrrrrou!</h2>
 
         <p>
-          Toma distraído! Você não fez bingo e agora vai passar!
+          Toma distraído! Você não fez bingo e agora vai esperar <strong>3 rodadas até marcar</strong>!
         </p>
       </div>
     </ContainerModal>
