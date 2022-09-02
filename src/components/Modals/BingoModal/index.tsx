@@ -4,7 +4,7 @@ import ContainerModal from "../ContainerModals";
 import "./style.scss";
 
 interface Prop {
-  closeModal: (value: any) => void;
+  closeModal: (value: boolean) => void;
 }
 
 const BingoModal = ({ closeModal }: Prop) => {
