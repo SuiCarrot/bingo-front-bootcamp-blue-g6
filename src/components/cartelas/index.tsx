@@ -1,9 +1,14 @@
+import { useState } from "react";
+
 type CartelaCard = {
+  id: string | undefined;
   numbers: number[];
   index: number;
 };
 
 export function CardCartela(card: CartelaCard) {
+  const [cardSelect, setCardSelect] = useState<boolean>(false);
+
   const handleClick: any = (e: any) => {
     if (e.currentTarget.style.backgroundColor) {
       e.currentTarget.style.backgroundColor = null;
@@ -13,8 +18,23 @@ export function CardCartela(card: CartelaCard) {
     e.currentTarget.classList.add("mark", "mark1");
   };
 
+  const selectCardToCheck = (id: string | undefined) => {
+    if (id) {
+      localStorage.setItem("cardId", id);
+      setCardSelect(true);
+      console.log(localStorage.getItem("cardId"));
+    }
+    setTimeout(() => {
+      setCardSelect(false);
+    }, 4500);
+  };
+
   return (
-    <table key={card.index}>
+    <table
+      className={cardSelect === true ? "table-selected" : "table"}
+      key={card.index}
+      onClick={() => selectCardToCheck(card.id)}
+    >
       <thead className="card-title">Cartela {card.index + 1}</thead>
 
       <tbody>
