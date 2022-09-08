@@ -9,7 +9,7 @@ const Cartela = () => {
   return (
     <>
       {quantityCards.map((card, index) => (
-        <CardCartela numbers={card.numbers} index={index}/>
+        <CardCartela key={index} id={card.id} numbers={card.numbers} index={index}/>
       ))}
     </>
   );
