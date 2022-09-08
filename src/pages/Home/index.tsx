@@ -76,7 +76,18 @@ const Home = () => {
 
             <span className="rangeValueCard">Cartelas: {valuesMatch.numberOfCards}</span>
 
-
+            <input
+              autoComplete ="off"
+              className="quantidade-cartelas"
+              type="range"
+              min={1}
+              max={3}
+              name="numberOfCards"
+              id="numberOfCards"
+              onChange={handleValuesMatch}
+              required
+            />
+            
             <button type="submit">JOGAR</button>
           </form>
         </div>
